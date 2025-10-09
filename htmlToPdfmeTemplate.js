@@ -106,9 +106,16 @@ export function htmlToPdfmeTemplate(htmlString, options = {}) {
 
       const name = dataKey || dataUuid || `field_${idx + 1}`;
 
+      // detectar placeholders del tipo {param}
+      const placeholderMatches = Array.from(rawText.matchAll(/\{([^}]+)\}/g)).map(m => m[1]);
+
+      // si hay placeholders, convertir el tipo a multiVariableText y generar variables
+      const isMulti = placeholderMatches.length > 0;
+      const finalType = isMulti ? 'multiVariableText' : type;
+
       const converted = {
         name,
-        type,
+        type: finalType,
         text: rawText,
         content: rawText,
         position: { x: scaleFn(left), y: scaleFn(top) },
@@ -130,6 +137,22 @@ export function htmlToPdfmeTemplate(htmlString, options = {}) {
         readOnly: false,
         dataUuid,
       };
+
+      if (isMulti) {
+        // construir content mapping simple: {v1: 'VAR_NAME', ...} pero usaremos los nombres tal cual
+        const variables = placeholderMatches;
+        // content se espera a veces como JSON string por compatibilidad en templates previos
+        try {
+          converted.content = JSON.stringify(variables.reduce((acc, v, i) => {
+            // generar claves v1, v2... conservando el nombre original en values
+            acc[v] = v;
+            return acc;
+          }, {}));
+        } catch (e) {
+          converted.content = rawText;
+        }
+        converted.variables = variables;
+      }
 
       // agregar metadatos originales en px para posible reconversión
       converted.meta = {
