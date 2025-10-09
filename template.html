@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    </meta>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .jr-page {
+            position: relative;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+            overflow: hidden;
+        }
+
+        .jr-band {
+            position: relative;
+            border: 1px dashed #ddd;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        .jr-el {
+            position: absolute;
+            box-sizing: border-box;
+            overflow: hidden;
+            border: 1px solid transparent;
+        }
+
+        .jr-el[data-type=staticText],
+        .jr-el[data-type=textField] {
+            cursor: text;
+        }
+
+        .jr-el:hover {
+            border: 1px solid #2196F3;
+        }
+
+        .jr-subreport {
+            background: rgba(255, 215, 0, 0.15);
+            border: 1px dashed #f1c40f;
+        }
+
+        .jr-el[data-markup=html] {
+            background: rgba(0, 128, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div class='jr-page' style='width:595px;height:842px;'>
+        <div class='jr-band' data-section='detail' style='width:595px;height:236px;top:0px;'>
+            <div class='jr-el ' data-type='textField' data-key='' data-uuid='91e6d4a4-d5d3-4f8a-b329-2d9a1fa5702e'
+                data-markup='html' style='left:180px;top:24px;width:186px;height:20px;'>\"CERTIFICADO \"+ $P{parameter1}
+            </div>
+            <div class='jr-el ' data-type='textField' data-key='' data-uuid='c12e03fc-db4c-4872-836d-0b9f9892ab36'
+                data-markup='html' style='left:0px;top:86px;width:555px;height:70px;'>\"El cliente \" + $P{parameter2} +
+                \", identificado con documento de identidad número \" + $P{parameter3} + \", en adelante denominado EL
+                CLIENTE, celebra el presente contrato con \" + $P{parameter4} + \", identificado con RUC número \" +
+                $P{parameter5} + \", en adelante denominado EL BANCO. Ambas partes acuerdan que la apertura de la cuenta
+                de ahorros número \" + $P{parameter6} + \" y el uso de los productos y servicios asociados estarán
+                sujetos a las condiciones generales establecidas en el presente documento. \" + \"EL CLIENTE autoriza
+                expresamente a EL BANCO a realizar cargos y abonos en la cuenta mencionada, derivados de operaciones
+                bancarias, comisiones y demás obligaciones contraídas por EL CLIENTE, \" + \"de conformidad con las
+                normativas vigentes emitidas por la Superintendencia de Banca, Seguros y AFP (SBS) y demás disposiciones
+                legales aplicables.\"</div>
+        </div>
+    </div>
+</body>
+
+</html>

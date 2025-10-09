@@ -1,0 +1,22 @@
+{
+  "name": "zy-pdf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@pdfme/common": "^5.4.2",
+    "@pdfme/generator": "^5.4.2",
+    "@pdfme/schemas": "^5.4.2",
+    "@pdfme/ui": "^5.4.2"
+  },
+  "devDependencies": {
+    "vite": "^7.1.2"
+  }
+}
