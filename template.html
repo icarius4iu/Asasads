@@ -3,74 +3,1455 @@
 
 <head>
     <meta charset='UTF-8'>
-    </meta>
     <style>
         body {
             margin: 0;
+            padding: 20px;
+            background: #e0e0e0;
             font-family: Arial, Helvetica, sans-serif;
         }
 
         .jr-page {
             position: relative;
-            margin: 0 auto;
+            margin: 20px auto;
             background: #fff;
-            box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
             overflow: hidden;
-        }
-
-        .jr-band {
-            position: relative;
-            border: 1px dashed #ddd;
-            margin: 0 auto;
-            box-sizing: border-box;
+            page-break-after: always;
         }
 
         .jr-el {
             position: absolute;
             box-sizing: border-box;
             overflow: hidden;
-            border: 1px solid transparent;
+            padding: 2px;
+            font-size: 10px;
+            line-height: 1.2;
         }
 
-        .jr-el[data-type=staticText],
+        .jr-el[data-type=staticText] {
+            color: #333;
+        }
+
         .jr-el[data-type=textField] {
-            cursor: text;
-        }
-
-        .jr-el:hover {
-            border: 1px solid #2196F3;
+            color: #0066cc;
+            font-style: italic;
         }
 
         .jr-subreport {
             background: rgba(255, 215, 0, 0.15);
             border: 1px dashed #f1c40f;
         }
-
-        .jr-el[data-markup=html] {
-            background: rgba(0, 128, 0, 0.05);
-        }
     </style>
 </head>
 
 <body>
-    <div class='jr-page' style='width:595px;height:842px;'>
-        <div class='jr-band' data-section='detail' style='width:595px;height:236px;top:0px;'>
-            <div class='jr-el ' data-type='textField' data-key='' data-uuid='91e6d4a4-d5d3-4f8a-b329-2d9a1fa5702e'
-                data-markup='html' style='left:180px;top:24px;width:186px;height:20px;'>\"CERTIFICADO \"+ $P{parameter1}
-            </div>
-            <div class='jr-el ' data-type='textField' data-key='' data-uuid='c12e03fc-db4c-4872-836d-0b9f9892ab36'
-                data-markup='html' style='left:0px;top:86px;width:555px;height:70px;'>\"El cliente \" + $P{parameter2} +
-                \", identificado con documento de identidad número \" + $P{parameter3} + \", en adelante denominado EL
-                CLIENTE, celebra el presente contrato con \" + $P{parameter4} + \", identificado con RUC número \" +
-                $P{parameter5} + \", en adelante denominado EL BANCO. Ambas partes acuerdan que la apertura de la cuenta
-                de ahorros número \" + $P{parameter6} + \" y el uso de los productos y servicios asociados estarán
-                sujetos a las condiciones generales establecidas en el presente documento. \" + \"EL CLIENTE autoriza
-                expresamente a EL BANCO a realizar cargos y abonos en la cuenta mencionada, derivados de operaciones
-                bancarias, comisiones y demás obligaciones contraídas por EL CLIENTE, \" + \"de conformidad con las
-                normativas vigentes emitidas por la Superintendencia de Banca, Seguros y AFP (SBS) y demás disposiciones
-                legales aplicables.\"</div>
+    <div class='jr-page' data-page='1' style='width:595px;height:842px;'>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='f785ca42-e854-4b57-8e7c-46bf2fa82ab9'
+            data-markup='none' data-page='1' style='left:1px;top:541px;width:453px;height:28px;'>BanBif podrá conceder
+            el préstamo con recursos del Fondo MIVIVIENDA S.A. o con recursos propios, conforme a las siguientes
+            condiciones:</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='83679cde-31ce-4a76-9030-06e4ce1195fe'
+            data-markup='none' data-page='1' style='left:0px;top:78px;width:453px;height:14px;'>CONTRATO DE PRÉSTAMO
+            HIPOTECARIO NUEVO CRÉDITO MIVIVIENDA</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='768d04a1-f692-4b84-8df9-cc0050ab678a'
+            data-markup='none' data-page='1' style='left:0px;top:122px;width:453px;height:14px;'>Cláusula Adicional:
+        </div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='67a6b4fe-0478-48ac-b49b-73450950e286'
+            data-markup='none' data-page='1' style='left:1px;top:300px;width:453px;height:14px;'>PRIMERA: OBJETO DEL
+            CONTRATO</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='5dab0ada-dfb0-44c8-8b02-4c45e9cd274b'
+            data-markup='html' data-page='1' style='left:0px;top:324px;width:453px;height:200px;'>Mediante el presente
+            contrato y de acuerdo a la disponibilidad de recursos, BanBif otorga a solicitud de EL CLIENTE un préstamo
+            dinerario con la finalidad exclusiva de financiar la adquisición del(los) inmueble(s) que se describe(n) en
+            el Anexo de este contrato:<br><br>Para tales efectos EL CLIENTE otorga como garantía del cumplimiento de los
+            términos y condiciones del mencionado préstamo y del eventual reembolso del Bono del Buen Pagador (BBP),
+            dicho(s) bien(es) inmueble(s), el(los) mismo(s) que será(n) utilizado(s) y destinado(s) por EL CLIENTE como
+            vivienda; inmueble(s) que es (son) hipotecado(s) a favor de BanBif. El desembolso de dichas facilidades y
+            los desembolsos que pudieran efectuarse en el futuro, respecto de dichas facilidades crediticias u otras que
+            se otorguen, estarán sujetos a que BanBif determine que toda la información y documentación sobre EL CLIENTE
+            y la garantía se encuentren a satisfacción de BanBif y/o a su criterio, no hayan variado las condiciones del
+            mercado ni en general los elementos que le sirvieron de juicio a BanBif para la aprobación del crédito.
+        </div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='684b5e2c-8d28-4be8-a76d-cb5cdf0887d3'
+            data-markup='none' data-page='1' style='left:0px;top:517px;width:453px;height:14px;'>SEGUNDA: DE LAS
+            CONDICIONES DEL PRESTAMO HIPOTECARIO NUEVO CRÉDITO MIVIVIENDA</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='3203f0df-02b2-4b26-8209-8f8961ed00d6'
+            data-markup='none' data-page='1' style='left:1px;top:584px;width:453px;height:14px;'>1.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='08905cff-bcb0-4416-8377-646c61e81a1a'
+            data-markup='none' data-page='1' style='left:17px;top:584px;width:437px;height:14px;'>CON RECURSOS DEL FONDO
+            MIVIVIENDA S.A.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='a8b6c20e-ca2f-43ad-9012-2fffb47e0f7e'
+            data-markup='html' data-page='1' style='left:0px;top:609px;width:453px;height:85px;'>En caso el préstamo se
+            otorgue con recursos del Fondo MIVIVIENDA S.A. proporcionados por la Corporación Financiera de Desarrollo SA
+            (COFIDE), se destinará una línea de crédito especial para la concesión de créditos para la adquisición de
+            viviendas denominada NUEVO CRÉDITO MIVIVIENDA.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='1e5dd252-0b2e-4d9d-94e8-ddf9284f2f1d'
+            data-markup='html' data-page='1' style='left:0px;top:661px;width:453px;height:42px;'>El otorgamiento del
+            presente préstamo estará condicionado a la evaluación crediticia que realice BanBif y a que COFIDE entregue
+            a BanBif, a su entera satisfacción, los fondos provenientes de la línea de crédito indicada anteriormente.
+        </div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='4d5bf250-1520-44d8-9af1-821b4ad62952'
+            data-markup='html' data-page='1' style='left:1px;top:715px;width:453px;height:83px;'>BanBif no estará
+            obligado a otorgar el préstamo hipotecario a EL CLIENTE en el caso que COFIDE no proporcione a BanBif los
+            fondos necesarios para que éste pueda otorgar el préstamo al amparo del Fondo MIVIVIENDA S.A., aun cuando
+            BanBif haya aprobado crediticiamente el préstamo a EL CLIENTE, por lo que la vigencia del presente contrato
+            quedará condicionada suspensivamente hasta que BanBif reciba de COFIDE los fondos para el desembolso del
+            préstamo a favor de EL CLIENTE de conformidad al Contrato de Canalización de Recursos del Fondo MIVIVIENDA
+            S.A.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='558b3db4-d7f5-4f73-b929-7f37fe89267e'
+            data-markup='html' data-page='1' style='left:1px;top:828px;width:450px;height:398px;'>En caso BanBif otorgue
+            el préstamo con recursos propios, para el eventual otorgamiento del Bono del Buen pagador (BBP) o cualquier
+            otro bono previsto en el presente contrato, será necesario que los fondos sean provistos por el Fondo
+            MIVIVIENDA S.A.<br><br>EL CLIENTE declara expresamente conocer y aceptar las condiciones señaladas en esta
+            cláusula respecto al otorgamiento del préstamo y a la vigencia de este contrato, así como el Reglamento de
+            Crédito del Fondo MIVIVIENDA, el Reglamento del Bono del Buen Pagador, Reglamento del Servicio de Cobertura
+            de Riesgo Crediticio y las demás disposiciones legales que regulan el Programa MIVIVIENDA.<br><br>El
+            desembolso del préstamo se realizará sólo si COFIDE aprueba el otorgamiento del presente préstamo, mediante
+            confirmación escrita dirigida a BanBif y si, de ser el caso, entrega los fondos suficientes a BanBif con
+            cargo a su línea de crédito, para que pueda efectuar el desembolso a favor de EL CLIENTE.<br><br>BanBif se
+            reserva el derecho a suspender o no efectuar el desembolso del crédito hipotecario si, por algún motivo,
+            varían de modo adverso las condiciones del mercado financiero y/o las condiciones políticas, económicas y/o
+            legales y/o la situación financiera, nivel de endeudamiento o calidad crediticia de EL CLIENTE y/o las
+            disposiciones sobre el Programa MIVIVIENDA y/o en general las circunstancias bajo las cuales fue aprobado el
+            presente crédito hipotecario, bastando para formalizar dicha suspensión o negativa, una comunicación escrita
+            remitida a EL CLIENTE. El ejercicio de este derecho por parte de BanBif no generará para EL CLIENTE derecho
+            al pago de penalidad o suma alguna en su favor por ningún concepto.<br><br>El préstamo que se otorga cuyo
+            desembolso se hará efectivo de acuerdo al cumplimiento de las condiciones aprobadas para la presente
+            operación, se sujetará a los términos y condiciones del presente instrumento y además a los términos y
+            condiciones especiales que se especifican en el Anexo y la Hoja Resumen que forman parte del presente
+            contrato.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='6b833a2f-e52f-4c64-aba7-386815931256'
+            data-markup='none' data-page='1' style='left:4px;top:803px;width:448px;height:14px;'>2.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='bb05706a-167c-4f20-85ce-8bcf1f040b68'
+            data-markup='none' data-page='1' style='left:20px;top:803px;width:431px;height:14px;'>CON RECURSOS PROPIOS
+            DE BANBIF</div>
+    </div>
+    <div class='jr-page' data-page='2' style='width:595px;height:842px;'>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='558b3db4-d7f5-4f73-b929-7f37fe89267e'
+            data-markup='html' data-page='2' style='left:1px;top:-14px;width:450px;height:398px;'>En caso BanBif otorgue
+            el préstamo con recursos propios, para el eventual otorgamiento del Bono del Buen pagador (BBP) o cualquier
+            otro bono previsto en el presente contrato, será necesario que los fondos sean provistos por el Fondo
+            MIVIVIENDA S.A.<br><br>EL CLIENTE declara expresamente conocer y aceptar las condiciones señaladas en esta
+            cláusula respecto al otorgamiento del préstamo y a la vigencia de este contrato, así como el Reglamento de
+            Crédito del Fondo MIVIVIENDA, el Reglamento del Bono del Buen Pagador, Reglamento del Servicio de Cobertura
+            de Riesgo Crediticio y las demás disposiciones legales que regulan el Programa MIVIVIENDA.<br><br>El
+            desembolso del préstamo se realizará sólo si COFIDE aprueba el otorgamiento del presente préstamo, mediante
+            confirmación escrita dirigida a BanBif y si, de ser el caso, entrega los fondos suficientes a BanBif con
+            cargo a su línea de crédito, para que pueda efectuar el desembolso a favor de EL CLIENTE.<br><br>BanBif se
+            reserva el derecho a suspender o no efectuar el desembolso del crédito hipotecario si, por algún motivo,
+            varían de modo adverso las condiciones del mercado financiero y/o las condiciones políticas, económicas y/o
+            legales y/o la situación financiera, nivel de endeudamiento o calidad crediticia de EL CLIENTE y/o las
+            disposiciones sobre el Programa MIVIVIENDA y/o en general las circunstancias bajo las cuales fue aprobado el
+            presente crédito hipotecario, bastando para formalizar dicha suspensión o negativa, una comunicación escrita
+            remitida a EL CLIENTE. El ejercicio de este derecho por parte de BanBif no generará para EL CLIENTE derecho
+            al pago de penalidad o suma alguna en su favor por ningún concepto.<br><br>El préstamo que se otorga cuyo
+            desembolso se hará efectivo de acuerdo al cumplimiento de las condiciones aprobadas para la presente
+            operación, se sujetará a los términos y condiciones del presente instrumento y además a los términos y
+            condiciones especiales que se especifican en el Anexo y la Hoja Resumen que forman parte del presente
+            contrato.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='eb7af206-8750-4adc-90ae-7a580722f932'
+            data-markup='none' data-page='2' style='left:0px;top:381px;width:450px;height:14px;'>TERCERA: DEL PAGO DEL
+            PRÉSTAMO</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='0388299c-42ac-4347-a0e8-2b6234bfe433'
+            data-markup='html' data-page='2' style='left:0px;top:402px;width:453px;height:282px;'>EL CLIENTE asume la
+            obligación de pagar el presente préstamo, sus intereses, comisiones y gastos en la misma moneda convenida,
+            pudiendo efectuar dicho pago en efectivo, con débito automático, transferencia u otro medio o forma de pago
+            admitido por BanBif.<br><br>Sin perjuicio de lo señalado en el párrafo anterior, EL CLIENTE puede afiliarse
+            a sistemas de débito para el pago del préstamo de acuerdo a los términos y condiciones del Contrato Único de
+            cuentas/depósitos y prestaciones de servicios suscrito con BanBif, en la misma moneda u otra distinta,
+            asumiendo EL CLIENTE los riesgos por la diferencia de cambio al momento de tramitar el cargo/abono. EL
+            CLIENTE debe verificar las operaciones e informar de inmediato en caso de que no se practicasen en la
+            oportunidad que corresponda o se realicen de manera errada. Sin perjuicio de ello, EL CLIENTE no será
+            responsable cuando, por causa no imputable a él, el débito automático no pueda realizarse en la fecha
+            pactada. Para afiliarse a los sistemas de débito EL CLIENTE podrá acercarse a cualquier Oficina de BanBif y
+            llenar el respectivo formulario de autorización de cargo en cuenta. EL CLIENTE podrá dejar sin efecto la
+            autorización de débito automático, en cualquier oficina de BanBif, mediante la firma de un nuevo formulario
+            de instrucción. EL CLIENTE también podrá afiliarse o desafiliarse a través de otros mecanismos que BanBif
+            pueda implementar a futuro, conforme a las disposiciones legales.<br><br>EL CLIENTE se obliga a pagar a
+            BanBif: (i) el monto del crédito desembolsado, (ii) los intereses compensatorios que correspondan, así como
+            los moratorios de ser el caso y (iii) las comisiones, gastos y tributos a que tuviera lugar, en la
+            oportunidad, forma y monto establecidos por BanBif en el presente</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='558b3db4-d7f5-4f73-b929-7f37fe89267e'
+            data-markup='html' data-page='2' style='left:1px;top:684px;width:453px;height:724px;'>contrato de préstamo
+            hipotecario, así como en la Hoja Resumen y los Cronogramas de Pago que forman parte del mismo, documentos
+            cuya recepción y contenido EL CLIENTE declara conocer y aceptar, pudiendo efectuar dicho pago en efectivo,
+            con débito automático, transferencia u otro medio o forma de pago admitido por BanBif.<br><br>EL CLIENTE
+            está obligado a efectuar el pago oportuno de todas las cuotas descritas en los Cronogramas de Pago y demás
+            conceptos a su cargo en las oficinas de BanBif, cuyas direcciones pueden ser ubicadas en la página Web
+            www.banbif.com.pe.<br><br>Para estos efectos, EL CLIENTE mantendrá o entregará a BanBif, con la anticipación
+            suficiente a la respectiva fecha de vencimiento de cada una de las cuotas, los fondos necesarios para
+            atender íntegramente sus pagos, para lo cual y sin perjuicio de lo anterior, le autoriza desde ahora a poder
+            cargar sus importes en cualquiera de los depósitos y/o cuentas que mantenga en BanBif. En caso de no
+            cancelar las cuotas en el día de su vencimiento, EL CLIENTE se obliga a pagar el importe de ellas, más, de
+            ser el caso, las comisiones, gastos, tributos, intereses compensatorios y moratorios, así como penalidades
+            por incumplimiento de contrato que no sean por incumplimiento de pago y que resulten aplicables. Los
+            intereses se devengarán desde el día siguiente a la fecha de vencimiento de la obligación, inclusive hasta
+            el día de su pago total efectivo, más los tributos, comisiones y gastos, si los hubiere. El detalle de los
+            intereses, comisiones, gastos y tributos se detalla en la Hoja Resumen Adjunta.<br><br>Sin perjuicio de
+            ello, y en uso de la facultad reconocida por el numeral 11 del artículo 132° de la Ley General del Sistema
+            Financiero y del Sistema de Seguros y Orgánica de la Superintendencia de Banca y Seguros, Ley N° 26702, en
+            adelante la Ley General, BanBif podrá, en cualquier momento, aplicar al pago de lo adeudado por principal
+            (capital), intereses compensatorios y moratorios, comisiones, gastos, costos de los seguros, tributos y a
+            cualquier otro concepto aplicable y exigible, cualquier fondo de EL CLIENTE existente en cuentas de
+            cualquier naturaleza, que en moneda extranjera o nacional mantenga en BanBif o, cualquier otra cuenta,
+            fondo, depósito, valor o bien que tenga en su poder y esté destinado a ser acreditado, abonado o entregado a
+            EL CLIENTE. No serán objeto de compensación los activos legal o contractualmente declarados intangibles o
+            excluidos de este derecho.<br><br>Sin perjuicio de lo anteriormente expuesto, BanBif podrá disponer otra
+            forma de pago, informando EL CLIENTE sobre la nueva modalidad a emplearse.<br><br>EL CLIENTE presta su
+            consentimiento para que en caso sus obligaciones no hayan sido canceladas oportunamente o si BanBif lo
+            estima conveniente, compense los saldos de las distintas cuentas que EL CLIENTE mantenga en BanBif y
+            centralice en una sola cuenta corriente en moneda nacional o extranjera los saldos acreedores o deudores que
+            éste pudiera tener, autorizando a BanBif a efectuar la conversión de moneda según la cotización vigente en
+            sus oficinas. BanBif informará posteriormente a EL CLIENTE sobre la realización de estas acciones mediante
+            comunicación cursada a su domicilio físico o a su dirección de correo electrónico, dentro de los estados de
+            cuenta, avisos de vencimiento o cualquier documentación que se curse al cliente o en comunicación especial,
+            según sea el caso, o mediante comunicación telefónica. El saldo acreedor o deudor resultante como
+            consecuencia de esta centralización y compensación será el saldo definitivo a favor o a cargo de EL CLIENTE.
+            Las partes acuerdan de manera expresa que la centralización de saldos y/o cuentas arriba indicadas, o el
+            pase del crédito otorgado a las cuentas corrientes de EL CLIENTE, no constituyen novación.<br><br>BanBif no
+            asumirá responsabilidad por la diferencia de cambio que resulte de la adquisición de la moneda de pago
+            destinada a la amortización o cancelación de las obligaciones que mantenga EL CLIENTE frente a BanBif,
+            cualquiera que sea la oportunidad en que se efectúe la operación de cambio.</div>
+    </div>
+    <div class='jr-page' data-page='3' style='width:595px;height:842px;'>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='558b3db4-d7f5-4f73-b929-7f37fe89267e'
+            data-markup='html' data-page='3' style='left:1px;top:-158px;width:453px;height:724px;'>contrato de préstamo
+            hipotecario, así como en la Hoja Resumen y los Cronogramas de Pago que forman parte del mismo, documentos
+            cuya recepción y contenido EL CLIENTE declara conocer y aceptar, pudiendo efectuar dicho pago en efectivo,
+            con débito automático, transferencia u otro medio o forma de pago admitido por BanBif.<br><br>EL CLIENTE
+            está obligado a efectuar el pago oportuno de todas las cuotas descritas en los Cronogramas de Pago y demás
+            conceptos a su cargo en las oficinas de BanBif, cuyas direcciones pueden ser ubicadas en la página Web
+            www.banbif.com.pe.<br><br>Para estos efectos, EL CLIENTE mantendrá o entregará a BanBif, con la anticipación
+            suficiente a la respectiva fecha de vencimiento de cada una de las cuotas, los fondos necesarios para
+            atender íntegramente sus pagos, para lo cual y sin perjuicio de lo anterior, le autoriza desde ahora a poder
+            cargar sus importes en cualquiera de los depósitos y/o cuentas que mantenga en BanBif. En caso de no
+            cancelar las cuotas en el día de su vencimiento, EL CLIENTE se obliga a pagar el importe de ellas, más, de
+            ser el caso, las comisiones, gastos, tributos, intereses compensatorios y moratorios, así como penalidades
+            por incumplimiento de contrato que no sean por incumplimiento de pago y que resulten aplicables. Los
+            intereses se devengarán desde el día siguiente a la fecha de vencimiento de la obligación, inclusive hasta
+            el día de su pago total efectivo, más los tributos, comisiones y gastos, si los hubiere. El detalle de los
+            intereses, comisiones, gastos y tributos se detalla en la Hoja Resumen Adjunta.<br><br>Sin perjuicio de
+            ello, y en uso de la facultad reconocida por el numeral 11 del artículo 132° de la Ley General del Sistema
+            Financiero y del Sistema de Seguros y Orgánica de la Superintendencia de Banca y Seguros, Ley N° 26702, en
+            adelante la Ley General, BanBif podrá, en cualquier momento, aplicar al pago de lo adeudado por principal
+            (capital), intereses compensatorios y moratorios, comisiones, gastos, costos de los seguros, tributos y a
+            cualquier otro concepto aplicable y exigible, cualquier fondo de EL CLIENTE existente en cuentas de
+            cualquier naturaleza, que en moneda extranjera o nacional mantenga en BanBif o, cualquier otra cuenta,
+            fondo, depósito, valor o bien que tenga en su poder y esté destinado a ser acreditado, abonado o entregado a
+            EL CLIENTE. No serán objeto de compensación los activos legal o contractualmente declarados intangibles o
+            excluidos de este derecho.<br><br>Sin perjuicio de lo anteriormente expuesto, BanBif podrá disponer otra
+            forma de pago, informando EL CLIENTE sobre la nueva modalidad a emplearse.<br><br>EL CLIENTE presta su
+            consentimiento para que en caso sus obligaciones no hayan sido canceladas oportunamente o si BanBif lo
+            estima conveniente, compense los saldos de las distintas cuentas que EL CLIENTE mantenga en BanBif y
+            centralice en una sola cuenta corriente en moneda nacional o extranjera los saldos acreedores o deudores que
+            éste pudiera tener, autorizando a BanBif a efectuar la conversión de moneda según la cotización vigente en
+            sus oficinas. BanBif informará posteriormente a EL CLIENTE sobre la realización de estas acciones mediante
+            comunicación cursada a su domicilio físico o a su dirección de correo electrónico, dentro de los estados de
+            cuenta, avisos de vencimiento o cualquier documentación que se curse al cliente o en comunicación especial,
+            según sea el caso, o mediante comunicación telefónica. El saldo acreedor o deudor resultante como
+            consecuencia de esta centralización y compensación será el saldo definitivo a favor o a cargo de EL CLIENTE.
+            Las partes acuerdan de manera expresa que la centralización de saldos y/o cuentas arriba indicadas, o el
+            pase del crédito otorgado a las cuentas corrientes de EL CLIENTE, no constituyen novación.<br><br>BanBif no
+            asumirá responsabilidad por la diferencia de cambio que resulte de la adquisición de la moneda de pago
+            destinada a la amortización o cancelación de las obligaciones que mantenga EL CLIENTE frente a BanBif,
+            cualquiera que sea la oportunidad en que se efectúe la operación de cambio.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='558b3db4-d7f5-4f73-b929-7f37fe89267e'
+            data-markup='html' data-page='3' style='left:1px;top:566px;width:453px;height:128px;'>Las partes acuerdan
+            que, en caso EL CLIENTE no cumpla con pagar alguna cuota en la fecha pactada, EL CLIENTE incurrirá en mora
+            automática, de conformidad con lo previsto por el inciso 1 del Artículo 1333° del Código Civil, sin
+            necesidad de requerimiento o intimación alguna por parte de BanBif. La terminación o preclusión de los
+            plazos del préstamo y/o resolución del contrato por causa de la mora incurrida, de conformidad con lo
+            señalado en la cláusula sétima numeral 7.6 del presente contrato, será comunicada a EL CLIENTE por
+            escrito.<br><br><b>CUARTA: BONO DEL BUEN PAGADOR (BBP) Y BBP INTEGRADOR (BBPI)<br><br></b></div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='ffa03422-b788-468a-87f0-77eaf536797a'
+            data-markup='none' data-page='3' style='left:17px;top:687px;width:432px;height:144px;'>El Bono del Buen
+            Pagador (BBP) es una ayuda económica directa no reembolsable, salvo lo previsto en la cláusula 4.4,
+            incorporada como complemento de la cuota inicial para la compra del inmueble, que se otorga a EL CLIENTE al
+            acceder al Crédito MIVIVIENDA con el objetivo de incentivar y promover el cumplimiento oportuno de los pagos
+            mensuales de dicho crédito, siempre que haya cumplido con los requisitos, procedimientos de asignación y
+            otorgamiento del BBP determinados por el Fondo MIVIVIENDA S.A., en el marco de la Ley N° 29033, Ley de
+            Creación de Bono del Buen Pagador, el D.S. N° 003-2015-VIVIENDA, sus modificatorias y el Reglamento del Bono
+            del Buen Pagador del Fondo MIVIVIENDA S.A.. El valor del BBP fluctúa en función al valor del inmueble, en
+            rangos legalmente establecidos, los mismos que podrán ser actualizados mediante decreto supremo.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='afe4ec52-d3da-4e51-9eb1-02edd403b24f'
+            data-markup='none' data-page='3' style='left:19px;top:834px;width:432px;height:86px;'>El Bono del Buen
+            Pagador Integrador (BBPI) es el Bono del Buen Pagador (BBP) que se otorga a las personas de menores ingresos
+            y vulnerabilidad que adquieran un crédito MIVIVIENDA y se encuentren en cualquiera de las categorías
+            previstas en el literal i del numeral 2.1 del artículo 2° del Reglamento de la Ley Nº 29033, Ley de Creación
+            del Bono del Buen Pagador, aprobado por el Decreto Supremo Nº 003- 2015-VIVIENDA y sus sustitutorias,
+            modificatorias y complementarias.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='af6b9fbd-cde1-4e2e-8a3e-263841cc8d82'
+            data-markup='none' data-page='3' style='left:0px;top:687px;width:17px;height:20px;'>4.1.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='37e20a8f-b5da-4c1b-b73c-f4a066b0ba80'
+            data-markup='none' data-page='3' style='left:0px;top:834px;width:17px;height:20px;'>4.2.</div>
+    </div>
+    <div class='jr-page' data-page='4' style='width:595px;height:842px;'>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='afe4ec52-d3da-4e51-9eb1-02edd403b24f'
+            data-markup='none' data-page='4' style='left:19px;top:-8px;width:432px;height:86px;'>El Bono del Buen
+            Pagador Integrador (BBPI) es el Bono del Buen Pagador (BBP) que se otorga a las personas de menores ingresos
+            y vulnerabilidad que adquieran un crédito MIVIVIENDA y se encuentren en cualquiera de las categorías
+            previstas en el literal i del numeral 2.1 del artículo 2° del Reglamento de la Ley Nº 29033, Ley de Creación
+            del Bono del Buen Pagador, aprobado por el Decreto Supremo Nº 003- 2015-VIVIENDA y sus sustitutorias,
+            modificatorias y complementarias.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='5ed3ed0c-ca61-4728-9f89-aaff9c706797'
+            data-markup='none' data-page='4' style='left:20px;top:72px;width:431px;height:28px;'>Los montos del BBP y,
+            de ser el caso, del BBPI otorgados a EL CLIENTE son los precisados en el Anexo de este contrato.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='1f70e891-8fe8-4f28-8eaf-c9c83185ba8d'
+            data-markup='none' data-page='4' style='left:20px;top:109px;width:431px;height:36px;'>EL CLIENTE deberá
+            reembolsar el BBP así como sus intereses legales a BanBif, quien a su vez lo entregará al Fondo MIVIVIENDA
+            S.A. a través de COFIDE, en los siguientes supuestos:</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='c896773c-08b8-47bc-b8c3-d21f5c9138dc'
+            data-markup='none' data-page='4' style='left:36px;top:145px;width:415px;height:65px;'>En caso que BanBif
+            haya calificado a EL CLIENTE como mal pagador, haya dado por vencidas las cuotas del crédito por
+            incumplimiento de pago y, además, se haya admitido la demanda de ejecución de garantía hipotecaria contra EL
+            CLIENTE. La demanda contemplará el monto de la deuda impaga y además el valor total del Bono del Buen
+            Pagador con sus respectivos intereses legales.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='968a4aa6-172c-484f-a879-3e62b982f72f'
+            data-markup='none' data-page='4' style='left:36px;top:210px;width:415px;height:56px;'>Cuando EL CLIENTE
+            realice el pago anticipado o prepago en forma total del préstamo otorgado en virtud a este contrato antes de
+            los cinco (5) años de desembolsado el mismo, con excepción de los casos cubiertos por aplicación de seguro
+            de desgravamen (muerte, invalidez total) o multirriesgo (pérdida total de vivienda).</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='11c68df6-8943-4780-afef-b6f90fc45f8d'
+            data-markup='none' data-page='4' style='left:36px;top:279px;width:414px;height:65px;'>Si BanBif identifica
+            que EL CLIENTE ha proporcionado información o declaraciones falsas o, tratándose de documentos, estos
+            hubieran sido falsos, adulterados o alterados con la finalidad de sustentar u obtener el préstamo otorgado o
+            cualquier otra operación realizada frente a BanBif, ello sin perjuicio del pago de la penalidad a que se
+            refiere la cláusula 6.1.7.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='01c6bcaa-cfd5-4176-b5d1-aa1a217c76ff'
+            data-markup='none' data-page='4' style='left:36px;top:345px;width:416px;height:28px;'>Otros que determine el
+            Fondo MIVIVIENDA S.A. y que sean comunicados a COFIDE para su aplicación.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='b99fd550-ebd6-4b88-b425-234c514393ed'
+            data-markup='none' data-page='4' style='left:20px;top:145px;width:15px;height:20px;'>a.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='37e20a8f-b5da-4c1b-b73c-f4a066b0ba80'
+            data-markup='none' data-page='4' style='left:0px;top:-8px;width:17px;height:20px;'>4.2.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='2597e106-fbff-492a-9c32-2157320077a1'
+            data-markup='none' data-page='4' style='left:0px;top:72px;width:17px;height:20px;'>4.3.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='9a216e82-6bd8-47a3-a53f-56aaa56ecd18'
+            data-markup='none' data-page='4' style='left:0px;top:109px;width:17px;height:20px;'>4.4.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='c40aef1c-b9ef-4850-870b-115208fbba21'
+            data-markup='none' data-page='4' style='left:20px;top:210px;width:15px;height:20px;'>b.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='afa605c5-1b85-44be-a60f-687bd2d5d3d6'
+            data-markup='none' data-page='4' style='left:21px;top:279px;width:15px;height:20px;'>c.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='9d4fc985-71db-456a-a357-7e8e38194367'
+            data-markup='none' data-page='4' style='left:20px;top:345px;width:15px;height:20px;'>d.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='8981b3e0-7103-414e-b153-42ad599c12ee'
+            data-markup='html' data-page='4' style='left:0px;top:462px;width:453px;height:310px;'><b>QUINTA: DE LA
+                HIPOTECA</b><br><br>EL CLIENTE constituye a favor de BanBif Primera y Preferencial Hipoteca sobre
+            el(los) inmueble(s) de su propiedad que se describe(n) en el Anexo del presente contrato, hasta por el monto
+            ahí indicado, en garantía del cumplimiento de los términos y condiciones del préstamo señalado en las
+            cláusulas anteriores, así como sus eventuales ampliaciones, modificaciones, reprogramaciones,
+            refinanciamientos, reestructuraciones, incluidos los intereses compensatorios y moratorios, comisiones,
+            gastos, tributos, primas de seguros pagadas por BanBif y los costos y costas ordenados judicial o
+            extrajudicialmente por cualquier autoridad competente, incluyendo el eventual reembolso del BBP o cualquier
+            otro bono previsto en el presente contrato, más los intereses, comisiones, gastos y penalidades distintas a
+            la penalidad por incumplimiento de pago que se generen de acuerdo a la Ley aplicable y a las disposiciones
+            del Fondo MIVIVIENDA S.A. frente a BanBif, conforme al artículo 172° de la Ley 26702.<br><br>Queda
+            establecido que la presente hipoteca se extiende a las indemnizaciones a las que se refieren los artículos
+            173° y 174° de la Ley 26702.<br><br>Los datos del(los) inmueble(s) hipotecado(s) y su valor de realización
+            según tasación por perito inscrito en la REPEV de la Superintendencia de Banca, Seguros y AFP, para fines de
+            ejecución, se encuentran establecidos en el Anexo de este contrato.<br><br><b>SEXTA: DECLARACIONES DE EL
+                CLIENTE</b><br><br></div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='0dd1eb3b-3276-4a6f-b1c8-9f3736707ed9'
+            data-markup='html' data-page='4' style='left:21px;top:777px;width:431px;height:78px;'><b>Sobre el Crédito
+                Hipotecario Nuevo MIVIVIENDA:</b><br><br>EL CLIENTE cuenta con la calificación como sujeto de crédito de
+            BanBif y declara con carácter de Declaración Jurada, que cumple con los requisitos exigidos por las normas
+            que regulan el Fondo MIVIVIENDA S.A, y las demás normas pertinentes, y en especial con lo siguiente:</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='30a9bcd6-528a-432a-99be-678a3cab7973'
+            data-markup='html' data-page='4' style='left:0px;top:777px;width:19px;height:20px;'><b>6.1</b></div>
+    </div>
+    <div class='jr-page' data-page='5' style='width:595px;height:842px;'>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='bdba0967-1acc-486d-9bb9-6309f40e0935'
+            data-markup='none' data-page='5' style='left:56px;top:266px;width:393px;height:40px;'>Que el valor total de
+            la vivienda a ser adquirida con el presente préstamo está comprendido dentro del(os) siguiente(s) rango(s):
+        </div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='0dd1eb3b-3276-4a6f-b1c8-9f3736707ed9'
+            data-markup='html' data-page='5' style='left:21px;top:-65px;width:431px;height:78px;'><b>Sobre el Crédito
+                Hipotecario Nuevo MIVIVIENDA:</b><br><br>EL CLIENTE cuenta con la calificación como sujeto de crédito de
+            BanBif y declara con carácter de Declaración Jurada, que cumple con los requisitos exigidos por las normas
+            que regulan el Fondo MIVIVIENDA S.A, y las demás normas pertinentes, y en especial con lo siguiente:</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='b097ad2d-554b-41a2-9c48-9998e5702dee'
+            data-markup='none' data-page='5' style='left:52px;top:17px;width:401px;height:33px;'>Que él y su cónyuge o
+            conviviente e hijos menores de edad no son propietarios ni copropietarios de otra vivienda;</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='f550eeb1-4cff-4f94-b1b1-64a2d7c58d3c'
+            data-markup='html' data-page='5' style='left:23px;top:17px;width:29px;height:20px;'>6.1.1.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='664f9963-6c30-4362-b5d1-02e08bc7bae6'
+            data-markup='none' data-page='5' style='left:52px;top:58px;width:401px;height:91px;'>Que él y su cónyuge o
+            conviviente no han recibido financiamiento habitacional previo del Estado, no habiendo adquirido
+            financiamiento con recursos del Fondo Nacional de Vivienda – FONAVI o del Banco de Materiales - BANMAT por
+            concepto de autoconstrucción de vivienda, adquisición de vivienda, reconstrucción de vivienda o
+            destugurización, ni préstamos con recursos canalizados por el Fondo MIVIVIENDA S.A. y tampoco la asignación
+            y desembolso previo del Bono Familiar Habitacional.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='84f9b0cd-0199-4e6e-9363-18311427a641'
+            data-markup='html' data-page='5' style='left:23px;top:58px;width:29px;height:20px;'>6.1.2.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='ce8e9bd1-18ab-4195-bcf5-28d4f19a1bca'
+            data-markup='none' data-page='5' style='left:56px;top:157px;width:398px;height:60px;'>Que los recursos
+            provenientes del desembolso de este préstamo serán destinados para la adquisición de una vivienda en primera
+            venta o vivienda recuperada o que esté en proceso de ejecución de garantías por falta de pago de préstamo
+            otorgados con recursos del Fondo MIVIVIENDA S.A.;</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='eec42685-a8db-40a1-9632-7afc7878ff79'
+            data-markup='html' data-page='5' style='left:23px;top:157px;width:29px;height:20px;'>6.1.3.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='ebf54318-27c8-4bbc-91d0-6c443db990f6'
+            data-markup='html' data-page='5' style='left:23px;top:225px;width:29px;height:20px;'>6.1.4.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='9e7ff296-e3c8-40bf-bd3f-e5bb7dcc3b04'
+            data-markup='none' data-page='5' style='left:57px;top:225px;width:396px;height:31px;'>Que la vivienda
+            financiada con recursos del Fondo MIVIVIENDA S.A. no ha sido transferida, bajo ninguna modalidad, a otras
+            personas naturales.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='8ed16b92-35e2-4a39-94ee-214d3b0a1164'
+            data-markup='html' data-page='5' style='left:23px;top:266px;width:29px;height:19px;'>6.1.5.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='a9b830cf-7162-4d12-aac2-8fc3131bb74b'
+            data-markup='none' data-page='5' style='left:387px;top:281px;width:66px;height:20px;'>, conforme a</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='6cead812-3f01-446b-919a-3ad8236df35e'
+            data-markup='none' data-page='5' style='left:56px;top:295px;width:159px;height:25px;'>lo señalado en el
+            marco legal vigente.</div>
+        <div class='jr-el ' data-type='textField' data-key='' data-uuid='712b3e59-ad14-49e3-983b-0b53c3adcd0f'
+            data-markup='none' data-page='5' style='left:309px;top:281px;width:100px;height:20px;'>{p_bfDCNombres}</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='9b7ddbdd-1567-4bc8-97ac-42d2a42cc2df'
+            data-markup='html' data-page='5' style='left:0px;top:584px;width:453px;height:15px;'><b>6.2. Sobre el
+                inmueble a hipotecar</b><br /></div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='71e073ac-7669-40f3-8a1f-557c9a61fbb8'
+            data-markup='html' data-page='5' style='left:20px;top:609px;width:431px;height:14px;'>EL CLIENTE declara
+            adicionalmente a BanBif:</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='5bca6af3-9c23-42b0-a001-200cefb063e0'
+            data-markup='html' data-page='5' style='left:21px;top:390px;width:30px;height:14px;'>6.1.7.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='91bf6a46-ce31-423e-9500-76317d41b294'
+            data-markup='html' data-page='5' style='left:57px;top:390px;width:397px;height:180px;'>EL CLIENTE acepta y
+            se obliga a seguir y respetar los términos y condiciones contenidos en la información y procedimientos sobre
+            aspectos relevantes relacionados principalmente a los beneficios, riesgos y condiciones que, por disposición
+            del Reglamento de Gestión de Conducta de Mercado del Sistema Financiero, aprobado por Resolución SBS N°
+            3274-2017, se publican en la página web www.banbif.com.pe y en los módulos informativos físicos o virtuales
+            que BanBif tiene dispuestos en sus oficinas.<br><br>En caso de que cualesquiera de las declaraciones antes
+            indicadas, resulten falsas o incompletas, o presente documentación adulterada o falsificada, BanBif podrá
+            dar por resuelto este contrato, conforme a lo estipulado en la octava cláusula de este contrato.
+            Adicionalmente, EL CLIENTE deberá devolver el íntegro del BBP y pagar una penalidad a favor del FONDO
+            MIVIVIENDA S.A. equivalente al diez por ciento (10%) del último saldo del crédito que BanBif reporte al
+            fondo.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='aff30cc3-5bd7-42bc-b9b6-2b25bd29e688'
+            data-markup='none' data-page='5' style='left:21px;top:598px;width:432px;height:12px;'>
+            ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        </div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='aa86de32-b8c0-4eb5-bdf3-90ecf3740fc8'
+            data-markup='none' data-page='5' style='left:21px;top:622px;width:433px;height:12px;'>
+            ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        </div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='3513cddd-1ebc-449d-a392-5d43883a3987'
+            data-markup='html' data-page='5' style='left:56px;top:633px;width:398px;height:124px;'>Que durante la
+            vigencia del presente contrato, en caso decida vender, transferir, realizar cualquier acto de disposición o
+            gravar bajo cualquier título sea en forma onerosa o gratuita el inmueble que hipoteca, deberá comunicarlo
+            previamente a BanBif. Asimismo, se compromete a requerir la conformidad previa, expresa y por escrito de
+            BanBif para ceder el uso o posesión de dicho(s) inmueble(s), mediante arrendamiento o bajo cualquier otra
+            modalidad o título, dejando constancia que la ejecución de la garantía hipotecaria que constituye sobre
+            el(los) inmueble(s) referido(s), generará la automática resolución del contrato de cesión de uso o posesión,
+            o arrendamiento que EL CLIENTE celebre con terceros.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='5d857518-4c3f-4015-a9ac-a5ed8facc4af'
+            data-markup='html' data-page='5' style='left:20px;top:633px;width:31px;height:14px;'>6.2.1.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='35b91c29-46fe-43b4-bd75-8cb61124a9d2'
+            data-markup='none' data-page='5' style='left:19px;top:757px;width:434px;height:12px;'>
+            ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        </div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='610c11d1-dd83-4dd4-93cb-505b27b5ef7a'
+            data-markup='html' data-page='5' style='left:56px;top:768px;width:397px;height:56px;'>Que reconoce que si
+            realiza actos de disposición o constituye otros gravámenes sobre el(los) inmueble(s) afectado(s) en garantía
+            hipotecaria con perjuicio de los derechos que le corresponden a BanBif como acreedor, ello constituirá
+            causal de resolución del contrato y ejecución de la garantía.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='ae29eef3-673e-450a-95d9-905fe13bef41'
+            data-markup='html' data-page='5' style='left:19px;top:768px;width:25px;height:14px;'>6.2.2.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='184cd2d3-70c4-4549-b4f1-8ac5dfa97ff7'
+            data-markup='html' data-page='5' style='left:57px;top:835px;width:396px;height:182px;'>Que la Hipoteca que
+            por este acto constituye EL CLIENTE se extiende a todo lo que de hecho o por derecho corresponda o pueda
+            pertenecer a el(los) inmueble(s) hipotecado(s) y comprende todas las construcciones o edificaciones que
+            pudieren existir sobre el(los) mismo(s), o bienes que pudieran en el futuro edificarse sobre el(los)
+            inmueble(s) y en su caso el suelo, subsuelo y sobresuelo, aires, porcentaje sobre áreas y bienes comunes,
+            comprendiendo además sus partes integrantes, accesorios, instalaciones, y en general, todo cuanto de hecho y
+            por derecho le(s) corresponda o se incorpore, sin reserva ni limitación alguna y en la más amplia extensión
+            a que se refiere el artículo 1101° del Código Civil. Bajo ningún motivo se interpretará que son bienes
+            futuros las edificaciones que no se encuentren inscritas al momento de la ejecución de la presente garantía
+            hipotecaria, haciéndose extensiva la hipoteca a los bienes y/o construcciones que se integren al inmueble
+            hipotecado y a sus accesorios pues la hipoteca se extiende a todo lo que se integre al bien hipotecado.
+        </div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='8cfd4fd2-f078-4543-81e4-70c5d9d8b427'
+            data-markup='none' data-page='5' style='left:19px;top:824px;width:433px;height:12px;'>
+            ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        </div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='c0ed3c17-f025-4e10-b70a-587fe9e623d5'
+            data-markup='html' data-page='5' style='left:19px;top:835px;width:25px;height:14px;'>6.2.3.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='3d763222-f1e9-4da6-965b-c768f750ac8e'
+            data-markup='none' data-page='5' style='left:57px;top:334px;width:395px;height:47px;'>Que los datos
+            proporcionados en la solicitud de préstamo y en el presente contrato son auténticos, los mismos que son
+            presentados con carácter de Declaración Jurada según el Artículo 179º de la Ley General y autoriza a BanBif
+            a verificarlos.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='f136f98c-8ccd-4441-9c08-24bbe38f8e43'
+            data-markup='html' data-page='5' style='left:22px;top:334px;width:29px;height:19px;'>6.1.6.</div>
+    </div>
+    <div class='jr-page' data-page='6' style='width:595px;height:842px;'>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='184cd2d3-70c4-4549-b4f1-8ac5dfa97ff7'
+            data-markup='html' data-page='6' style='left:57px;top:-7px;width:396px;height:182px;'>Que la Hipoteca que
+            por este acto constituye EL CLIENTE se extiende a todo lo que de hecho o por derecho corresponda o pueda
+            pertenecer a el(los) inmueble(s) hipotecado(s) y comprende todas las construcciones o edificaciones que
+            pudieren existir sobre el(los) mismo(s), o bienes que pudieran en el futuro edificarse sobre el(los)
+            inmueble(s) y en su caso el suelo, subsuelo y sobresuelo, aires, porcentaje sobre áreas y bienes comunes,
+            comprendiendo además sus partes integrantes, accesorios, instalaciones, y en general, todo cuanto de hecho y
+            por derecho le(s) corresponda o se incorpore, sin reserva ni limitación alguna y en la más amplia extensión
+            a que se refiere el artículo 1101° del Código Civil. Bajo ningún motivo se interpretará que son bienes
+            futuros las edificaciones que no se encuentren inscritas al momento de la ejecución de la presente garantía
+            hipotecaria, haciéndose extensiva la hipoteca a los bienes y/o construcciones que se integren al inmueble
+            hipotecado y a sus accesorios pues la hipoteca se extiende a todo lo que se integre al bien hipotecado.
+        </div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='c0ed3c17-f025-4e10-b70a-587fe9e623d5'
+            data-markup='html' data-page='6' style='left:19px;top:-7px;width:25px;height:14px;'>6.2.3.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='8dcb9be5-58eb-46c8-9f33-1bc1768e9c44'
+            data-markup='html' data-page='6' style='left:57px;top:227px;width:396px;height:236px;'>Igualmente comprende
+            los frutos y rentas que pudiera producir, los mismos que podrán ser recaudados directamente por BanBif, para
+            aplicarlos al pago de lo que se le adeudase. Asimismo, la presente hipoteca se extiende a las
+            indemnizaciones a las que se refieren los artículos 173° y 174° de la Ley General.<br><br>En caso exista
+            sobre el(los) inmueble(s) edificaciones, fábricas, construcciones, obras civiles y/u obras complementarias
+            que no cuenten con declaratoria de fábrica inscrita, EL CLIENTE declara bajo juramento, a la fecha de
+            suscripción del presente contrato, que, las mismas, a pesar de que se encuentran pendientes de inscripción
+            registral y/o regularización, forman parte integrante del(los) inmueble(s) hipotecado(s) y, en consecuencia,
+            están comprendidas en el gravamen hipotecario que se constituye en virtud del presente contrato. En virtud
+            de lo anteriormente expuesto, EL CLIENTE se obliga a iniciar, impulsar y concluir con el trámite de
+            inscripción de la declaratoria de fábrica sobre el(los) inmueble(s) hipotecados en el Registro Público
+            correspondiente, en un plazo máximo de 90 días calendarios contados a partir de la firma de la escritura
+            pública que origine la presente minuta. El cumplimiento de la presente obligación se verificará con la
+            presentación de copia literal de la partida electrónica correspondiente a el(los) inmueble(s) hipotecados.
+        </div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='b8ee5652-506e-4400-a568-96e6e97c481f'
+            data-markup='none' data-page='6' style='left:57px;top:481px;width:395px;height:58px;'>Que sobre los
+            inmuebles hipotecados no existe gravamen de ninguna especie ni medida judicial, ni extrajudicial alguna que
+            limite su derecho de libre disposición, ni la facultad de constituir hipoteca, quedando obligado en todo
+            caso, al saneamiento de ley en caso de evicción.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='9b7ddbdd-1567-4bc8-97ac-42d2a42cc2df'
+            data-markup='html' data-page='6' style='left:1px;top:747px;width:453px;height:15px;'><b>7.1. Del seguro
+                contra todo riesgo</b><br /></div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='71e073ac-7669-40f3-8a1f-557c9a61fbb8'
+            data-markup='html' data-page='6' style='left:21px;top:771px;width:433px;height:165px;'>Durante la vigencia
+            del presente contrato, EL CLIENTE autoriza expresamente a BanBif para que contrate, por cuenta, costo y
+            cargo de EL CLIENTE, un seguro para el inmueble otorgado en garantía, el cual cubrirá riesgos de incendio,
+            huelgas, conmoción civil, daño malicioso, vandalismo, terrorismo, terremoto, inundaciones, rayo y demás
+            riesgos naturales. La póliza a contratar será por el valor declarado total, que se determina según el valor
+            comercial o valor de reconstrucción del bien asegurado, a elección de EL CLIENTE, de acuerdo lo establecido
+            en las condiciones de la póliza o certificado de seguro.<br><br>En caso de siniestro, la Compañía de Seguros
+            indemnizará a BanBif en su calidad de beneficiario de la póliza.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='5bca6af3-9c23-42b0-a001-200cefb063e0'
+            data-markup='html' data-page='6' style='left:20px;top:546px;width:30px;height:14px;'>6.2.5.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='91bf6a46-ce31-423e-9500-76317d41b294'
+            data-markup='html' data-page='6' style='left:58px;top:546px;width:397px;height:42px;'>Que se compromete a
+            permitir que BanBif, así como los representantes del Fondo MIVIVIENDA S.A. y de COFIDE, puedan
+            indistintamente inspeccionar en cualquier momento la vivienda que adquirirá con el presente préstamo.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='aff30cc3-5bd7-42bc-b9b6-2b25bd29e688'
+            data-markup='none' data-page='6' style='left:22px;top:761px;width:432px;height:12px;'>
+            ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        </div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='6af771d3-fb70-4771-be3b-6a690122f4e1'
+            data-markup='html' data-page='6' style='left:20px;top:600px;width:31px;height:14px;'>6.2.6.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='970a6b75-0515-447e-ac2f-c82a7d41af7a'
+            data-markup='html' data-page='6' style='left:58px;top:600px;width:396px;height:111px;'>Que se obliga a
+            suscribir la escritura pública que se origine del presente contrato en un plazo máximo de treinta (30) días
+            calendario contados desde el día siguiente de la fecha de firma de este contrato, así como los documentos,
+            minutas o escrituras públicas que sean necesarios para lograr la inscripción de la Hipoteca en el Registro
+            de Predios correspondiente, la cual deberá inscribirse en un plazo máximo de 6 meses si se trata de un bien
+            terminado y/o plazo de 36 meses de tratarse de un bien futuro, dejando a salvo el derecho de BanBif a dejar
+            sin efecto la operación de crédito y/o resolver este contrato en caso de incumplimiento del presente
+            numeral.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='1131e55d-cce1-404c-8448-ca0cf33d0a99'
+            data-markup='none' data-page='6' style='left:1px;top:723px;width:450px;height:14px;'>SETIMA: DE LOS SEGUROS
+        </div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='1f5793c5-7c23-4081-a575-7bf5430f57e0'
+            data-markup='html' data-page='6' style='left:21px;top:481px;width:27px;height:14px;'>6.2.4.</div>
+    </div>
+    <div class='jr-page' data-page='7' style='width:595px;height:842px;'>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='71e073ac-7669-40f3-8a1f-557c9a61fbb8'
+            data-markup='html' data-page='7' style='left:21px;top:-71px;width:433px;height:165px;'>Durante la vigencia
+            del presente contrato, EL CLIENTE autoriza expresamente a BanBif para que contrate, por cuenta, costo y
+            cargo de EL CLIENTE, un seguro para el inmueble otorgado en garantía, el cual cubrirá riesgos de incendio,
+            huelgas, conmoción civil, daño malicioso, vandalismo, terrorismo, terremoto, inundaciones, rayo y demás
+            riesgos naturales. La póliza a contratar será por el valor declarado total, que se determina según el valor
+            comercial o valor de reconstrucción del bien asegurado, a elección de EL CLIENTE, de acuerdo lo establecido
+            en las condiciones de la póliza o certificado de seguro.<br><br>En caso de siniestro, la Compañía de Seguros
+            indemnizará a BanBif en su calidad de beneficiario de la póliza.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='aa86de32-b8c0-4eb5-bdf3-90ecf3740fc8'
+            data-markup='none' data-page='7' style='left:20px;top:163px;width:433px;height:12px;'>
+            ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        </div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='f8f92bc7-f34a-48b6-8335-801b851a496e'
+            data-markup='html' data-page='7' style='left:23px;top:177px;width:453px;height:15px;'><b>Del seguro de
+                desgravamen</b></div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='ba3f04c8-c703-44ff-bae0-418a27f47b42'
+            data-markup='none' data-page='7' style='left:23px;top:191px;width:433px;height:12px;'>
+            ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        </div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='79d3bca9-ec41-41a3-88f0-d6dd8a88948b'
+            data-markup='html' data-page='7' style='left:23px;top:202px;width:433px;height:616px;'>EL CLIENTE se obliga
+            a mantener vigente durante el plazo de este contrato una póliza de Seguro de Desgravamen. En caso haya
+            elegido que el seguro sea contratado a través de BanBif, autoriza a éste en forma expresa, por el sólo
+            mérito del presente contrato, a contratar y mantener vigente la respectiva póliza, cuyo costo será asumido
+            íntegramente por EL CLIENTE y podrá ser incluido en las cuotas que deba pagar mensualmente EL CLIENTE como
+            consecuencia del crédito otorgado. Dicha póliza tendrá las condiciones que la Compañía de Seguros y BanBif
+            establezcan, indemnizando con el pago del saldo insoluto del capital de la deuda en caso de fallecimiento o
+            invalidez total y permanente por accidente o enfermedad de EL CLIENTE. Producido el siniestro, BanBif en
+            calidad de beneficiario de la póliza, cobrará directamente la indemnización que deba pagar la aseguradora
+            para aplicarla al capital de la deuda en la forma indicada, siendo de cargo de los herederos de EL CLENTE
+            los intereses compensatorios y moratorios, comisiones, capital, tributos y gastos del préstamo en mora o
+            aquellos conceptos que no sean cubiertos con el seguro, con el límite de la masa hereditaria. Del mismo
+            modo, EL CLIENTE acepta todas las exclusiones y limitaciones que dicha Póliza contenga, asumiendo EL CLIENTE
+            la obligación de informarse de sus alcances y condiciones. EL CLIENTE declara que, antes de contratar,
+            BanBif ha puesto a su disposición los folletos informativos del seguro que son otorgados por la empresa de
+            seguros. Asimismo, a partir de la entrada en vigencia del numeral 1 de la Octava Disposición Complementaria
+            Final del Reglamento de Gestión de Conducta de Mercado del Sistema Financiero aprobado por Resolución SBS N°
+            3274-2017, que ha sido incorporado por la Resolución SBS N° 1147-2021, al celebrarse este contrato, BanBif
+            presentará a EL CLIENTE una alternativa de seguro de desgravamen con rescate o devolución que considere como
+            cobertura principal la de sobrevivencia, siendo dicha alternativa de libre elección.<br><br>A la firma de
+            este contrato, EL CLIENTE deberá haber suscrito, bajo juramento, una declaración de salud veraz, completa y
+            exacta, por lo que EL CLIENTE declara que cumple con las condiciones de la póliza y los requisitos exigidos
+            por ella y que a la firma de la escritura pública que esta minuta origine, EL CLIENTE estará también
+            comprendido dentro de las condiciones y requisitos de la póliza, motivo por el cual este préstamo quedará en
+            su caso, cubierto por el seguro de desgravamen.<br><br>La declaración de salud a que se refiere el párrafo
+            anterior deberá haber sido efectuada y suscrita por EL CLIENTE conociendo que en caso ello ocurra o en caso
+            sean falsas, incompletas o inexactas las afirmaciones anotadas en dicha declaración o en aquellos casos en
+            que no se cumplan las condiciones y requisitos de la póliza que declara recibir y conocer en su integridad,
+            EL CLIENTE perderá el derecho a la indemnización que deba pagar la aseguradora por el préstamo a que se
+            refiere esta escritura, con los efectos consiguientes para EL CLIENTE y/o sus herederos, quienes asumirán el
+            pago de lo adeudado a BanBif hasta el límite de la masa hereditaria, conforme a ley.<br><br>EL CLIENTE
+            declara también que conoce y acepta que el seguro de desgravamen solamente pagará el saldo de la deuda al
+            día de su fallecimiento, siendo de cargo de sus herederos los intereses compensatorios y moratorios,
+            comisiones, penalidades, capital, tributos y gastos del préstamo en mora y que no se hayan cancelado hasta
+            dicha fecha, con el límite de la masa hereditaria.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='4ab525be-1c8f-49cf-8cd2-0e0d3af3c4c4'
+            data-markup='none' data-page='7' style='left:23px;top:109px;width:431px;height:57px;'>EL CLIENTE declara que
+            ha sido informado sobre las opciones de contratar el seguro por el valor comercial o el valor de
+            reconstrucción del inmueble asegurado, así como las consecuencias de contratar el seguro por un monto menor,
+            el monto de la prima a pagar, entre otra información relevante para la contratación de estos tipos de
+            seguro.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='39f92141-0f74-4e89-bc9c-55a28f11842e'
+            data-markup='html' data-page='7' style='left:1px;top:177px;width:17px;height:20px;'><b>7.2.</b></div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='aa86de32-b8c0-4eb5-bdf3-90ecf3740fc8'
+            data-markup='none' data-page='7' style='left:20px;top:825px;width:433px;height:12px;'>
+            ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        </div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='f8f92bc7-f34a-48b6-8335-801b851a496e'
+            data-markup='html' data-page='7' style='left:0px;top:836px;width:453px;height:15px;'><b>7.3. Condiciones
+                aplicables a ambos seguros</b><br /></div>
+    </div>
+    <div class='jr-page' data-page='8' style='width:595px;height:842px;'>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='f8f92bc7-f34a-48b6-8335-801b851a496e'
+            data-markup='html' data-page='8' style='left:0px;top:-6px;width:453px;height:15px;'><b>7.3. Condiciones
+                aplicables a ambos seguros</b><br /></div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='ba3f04c8-c703-44ff-bae0-418a27f47b42'
+            data-markup='none' data-page='8' style='left:20px;top:8px;width:433px;height:12px;'>
+            ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        </div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='79d3bca9-ec41-41a3-88f0-d6dd8a88948b'
+            data-markup='html' data-page='8' style='left:20px;top:19px;width:433px;height:681px;'>EL CLIENTE acepta
+            todas las exclusiones y limitaciones que contengan las pólizas de seguro contra todo riesgo y de
+            desgravamen, asumiendo EL CLIENTE la obligación de informarse de sus alcances y condiciones. EL CLIENTE
+            declara que, antes de contratar, BanBif ha puesto a su disposición los folletos informativos del seguro que
+            son otorgados por la empresa de seguros.<br><br>En caso EL CLIENTE haya elegido contratar directamente
+            alguno(s) de los seguros antes mencionados, el respectivo seguro deberá contar con la aceptación por parte
+            de BanBif del endoso de la póliza y de las condiciones para la cobertura. En tal supuesto, EL CLIENTE se
+            obliga, a la firma del presente contrato a endosar, a favor de BanBif, la referida póliza de seguros y a
+            entregarle inmediatamente y/o cuando BanBif lo requiera, bajo exclusiva responsabilidad de EL CLIENTE, todos
+            los documentos sustentatorios, tales como la póliza o contrato de seguro, su renovación, el endoso de cesión
+            de derechos indemnizatorios y todas las constancias de pago de la prima, mientras se encuentre vigente el
+            presente contrato. EL CLIENTE declara conocer que las condiciones para que pueda contratar el seguro
+            directamente o a través de un corredor de seguros se encuentran a su disposición en la página web de BanBif
+            (www.banbif.com.pe); aquí también se consigna información acerca del derecho de endoso de un seguro de vida
+            y el procedimiento para acceder a este. Cuando EL CLIENTE presente una solicitud de endoso de seguro de
+            desgravamen y esta se rechace, BanBif le comunicará este hecho y el motivo asociado, a través de medios de
+            comunicación directos, dentro de los veinte (20) días posteriores a la presentación de la solicitud con la
+            documentación completa.<br><br>EL CLIENTE se obliga a mantener la vigencia de los seguros durante el plazo
+            del contrato y a remitir a BanBif las pólizas endosadas previo a la fecha de vencimiento, por lo que la
+            falta de contratación y/o, renovación del seguro y/o comunicación a BanBif de dicha contratación o
+            renovación, no conllevará ninguna responsabilidad para BanBif.<br><br>Si EL CLIENTE no cumpliera con
+            mantener el respectivo seguro en los términos descritos en esta cláusula o con renovarlo, reajustarlo y/o
+            ampliarlo en su oportunidad, BanBif se reserva el derecho de hacerlo por cuenta de EL CLIENTE, pudiendo
+            contratar el seguro con la Compañía de Seguros que decida, procediendo: (i) a cargar el importe de las
+            primas de cualquier cuenta de titularidad de EL CLIENTE abierta en BanBif, o (ii) a financiar el referido
+            importe en caso no existan fondos en las mencionadas cuentas, pudiendo incrementar el valor de las cuotas
+            futuras de su cronograma de pagos o el plazo del mismo, lo cual será comunicado a EL CLIENTE y el nuevo
+            cronograma que se emita en aplicación de esta cláusula será de cumplimiento obligatorio, sin necesidad que
+            ambas partes suscriban o celebren una adenda o nuevo contrato y prevalecerá sobre el anterior cronograma,
+            aun cuando éste conste por Escritura Pública. En caso EL CLIENTE presentara la póliza endosada
+            posteriormente o fuera de fecha, no habrá devolución de primas cobradas. De resultar aplicable el supuesto
+            señalado en el literal (ii) anterior, BanBif queda autorizado a cobrar a EL CLIENTE las máximas tasas de
+            interés aplicables para sus operaciones activas.<br><br>En caso BanBif no pudiera contratar el respectivo
+            seguro, debido a que EL CLIENTE o el inmueble no califican para el mismo, EL CLIENTE declara conocer que
+            BanBif podrá dar por terminado el presente contrato, de acuerdo a los términos señalados en la cláusula
+            sétima.<br><br>Es también pacto expreso entre las partes que si por cualquier causa el monto indemnizado por
+            la compañía de seguros no cubriera el total del crédito otorgado pendiente de pago a BanBif por EL CLIENTE,
+            incluyendo intereses compensatorios y moratorios, gastos, tributos y comisiones, EL CLIENTE y/o sus
+            herederos, según corresponda, continuarán obligados a cancelar el íntegro de</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='79730347-9546-4402-b572-ca6c22a8ed34'
+            data-markup='none' data-page='8' style='left:0px;top:836px;width:409px;height:12px;'>
+            ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        </div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='1131e55d-cce1-404c-8448-ca0cf33d0a99'
+            data-markup='none' data-page='8' style='left:0px;top:823px;width:453px;height:14px;'>OCTAVA: DEL TÉRMINO DEL
+            CONTRATO</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='778d2cc5-07da-4e78-b904-b03ccf377985'
+            data-markup='none' data-page='8' style='left:1px;top:812px;width:452px;height:12px;'>
+            ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        </div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='580201ba-8163-4386-84a0-4e96169b7197'
+            data-markup='none' data-page='8' style='left:21px;top:714px;width:430px;height:108px;'>las cuotas pendientes
+            de pago, vencidas o no vencidas a satisfacción de BanBif.&lt;br&gt;&lt;br&gt;EL CLIENTE otorga su
+            consentimiento para que la compañía de seguros le remita la póliza de seguro que se contrate a través de
+            BanBif, a la dirección de correo electrónico registrada como suya en los sistemas de BanBif. Asimismo, se
+            compromete a mantener activa la cuenta de correo electrónico indicada, abrir y leer debidamente las
+            comunicaciones electrónicas y sus archivos adjuntos. La comunicación surtirá efecto desde el momento que la
+            compañía de seguros notifique al EL CLIENTE con el envío de la póliza de seguros a su correo electrónico.
         </div>
     </div>
+    <div class='jr-page' data-page='9' style='width:595px;height:842px;'>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='79730347-9546-4402-b572-ca6c22a8ed34'
+            data-markup='none' data-page='9' style='left:0px;top:-6px;width:409px;height:12px;'>
+            ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        </div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='1f03d9e2-a41f-40fd-b3af-59091d873b09'
+            data-markup='html' data-page='9' style='left:0px;top:6px;width:453px;height:70px;'>BanBif podrá dar por
+            terminado el presente contrato de préstamo, sin asumir por ello ninguna responsabilidad, dando por vencidos
+            todos los plazos estipulados en el presente contrato y exigir el pago inmediato del íntegro de las cuotas y
+            demás obligaciones pendientes de pago y proceder a la ejecución de la garantía hipotecaria y/u otras
+            constituidas a favor de BanBif, de verificarse uno cualquiera de los siguientes hechos:</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='4f98ca18-c060-4d30-a135-db4f5884b967'
+            data-markup='none' data-page='9' style='left:1px;top:75px;width:452px;height:12px;'>
+            ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        </div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='46b6b279-8ebd-4fae-9e5b-e17d3ac44248'
+            data-markup='html' data-page='9' style='left:0px;top:87px;width:23px;height:14px;'>8.1.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='75407482-d752-4f78-8575-44d82e25f128'
+            data-markup='html' data-page='9' style='left:23px;top:86px;width:430px;height:84px;'>Si una cualesquiera de
+            las declaraciones de EL CLIENTE, contempladas en la cláusula sexta del presente contrato resultaren falsas o
+            incompletas o se determine la existencia de inexactitud o falsedad en el contenido de cualquiera de las
+            declaraciones formuladas o de la documentación proporcionada por EL CLIENTE a BanBif durante el trámite de
+            solicitud del crédito o con posterioridad a él, sea para obtener el presente préstamo o cualquier otra
+            operación realizada frente a BanBif.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='09e62ad2-cd27-443b-b888-56a9a00fdd2e'
+            data-markup='html' data-page='9' style='left:0px;top:180px;width:23px;height:14px;'>8.2.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='707a78b4-339c-4ff2-bcbd-2a7d000c40f9'
+            data-markup='none' data-page='9' style='left:0px;top:169px;width:453px;height:12px;'>
+            ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        </div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='5c43397e-3159-4681-b663-da54a970a919'
+            data-markup='html' data-page='9' style='left:23px;top:179px;width:430px;height:71px;'>Si a la fecha de la
+            celebración de este contrato, resultara que EL CLIENTE padecía de enfermedad diagnosticada o de su
+            conocimiento, preexistente o, en su caso, si la declaración de salud que formuló para el seguro no fuese
+            cierta o exacta y ello determine que haga imposible, o deje o pueda dejar sin efecto en cualquier momento el
+            seguro de desgravamen-vida y/o desgravamen hipotecario contratado con la aseguradora.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='0aff8e94-a5ae-4ffa-947c-f30bd06f4cca'
+            data-markup='none' data-page='9' style='left:23px;top:262px;width:426px;height:30px;'>Si BanBif no pudiera
+            contratar el seguro de desgravamen, debido a que EL CLIENTE no califica para el mismo</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='fff25a2c-144c-4766-a15e-130985beb1d1'
+            data-markup='html' data-page='9' style='left:1px;top:262px;width:23px;height:14px;'>8.3.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='adb63255-ff06-4a84-85e1-4b1a9d33f78b'
+            data-markup='none' data-page='9' style='left:23px;top:305px;width:426px;height:30px;'>Si BanBif no pudiera
+            contratar el seguro de desgravamen, debido a que EL CLIENTE no califica para el mismo</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='68040be1-4dbe-4d4c-a512-938da052fd0e'
+            data-markup='html' data-page='9' style='left:0px;top:305px;width:23px;height:14px;'>8.4.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='ea91ce78-3e5d-4c5e-b69c-d999fcae5d7a'
+            data-markup='none' data-page='9' style='left:22px;top:348px;width:431px;height:45px;'>Si a los sesenta (60)
+            días calendario de producida la independización de los bienes inmuebles materia de la presente escritura
+            pública o en un plazo máximo de ciento ochenta (180) días útiles de otorgada la presente escritura pública,
+            lo que ocurra primero, no se hubiere formalizado la inscripción registral de la hipoteca que por este acto
+            se constituye, por causas imputables o no a EL CLIENTE.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='05f520f0-58f3-4e51-8190-1e461b10d7dc'
+            data-markup='html' data-page='9' style='left:1px;top:348px;width:23px;height:14px;'>8.5.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='92f8d284-ae33-4565-959c-beeb6c1ca443'
+            data-markup='none' data-page='9' style='left:22px;top:403px;width:430px;height:45px;'>Si EL CLIENTE dejara
+            de pagar dos o más cuotas o armadas del préstamo según el cronograma de pagos acordado, sea en forma
+            alternada o consecutiva o si incumpliera cualquiera de sus obligaciones con BanBif estipuladas en este
+            contrato, en especial las de pago.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='4c7a9a74-e5bd-42a5-80e8-c7b2cd86d53b'
+            data-markup='html' data-page='9' style='left:0px;top:459px;width:23px;height:14px;'>8.7.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='f24b7e04-8322-4a28-870b-fde2a1f59181'
+            data-markup='none' data-page='9' style='left:22px;top:459px;width:431px;height:45px;'>Si el valor del bien
+            hipotecado, según tasación que BanBif, por cuenta y costo de EL CLIENTE, mande practicar, disminuyera por
+            cualquier causa a un monto inferior en más del 10% del valor de sus obligaciones por vencer y dicha
+            disminución afectara la relación deuda/garantía establecida al momento de la concesión del préstamo, salvo
+            que mejore o amplíe la garantía a entera satisfacción de BanBif, o que reduzca su obligación u obligaciones
+            en la proporción y dentro del plazo que BanBif le señale.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='189f6d28-43c2-4ccc-91ed-0446497b4dae'
+            data-markup='html' data-page='9' style='left:0px;top:403px;width:23px;height:14px;'>8.6.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='03faf3a4-62b6-4e9b-8dd9-930cb95bd97c'
+            data-markup='none' data-page='9' style='left:23px;top:515px;width:430px;height:35px;'>Si el inmueble
+            hipotecado resultara afectado con otros gravámenes y/o cargas en favor de terceros.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='f7935b44-08cc-4ef6-8414-f88a30990999'
+            data-markup='html' data-page='9' style='left:0px;top:515px;width:23px;height:14px;'>8.8.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='3986e685-850d-4396-942a-bdb25209ff89'
+            data-markup='none' data-page='9' style='left:24px;top:600px;width:428px;height:35px;'>Si EL CLIENTE se
+            somete o es sometido a cualquier procedimiento concursal, es declarado insolvente o en quiebra o suspende
+            sus pagos, o ingresara en cualquier forma a un proceso de insolvencia o concursal.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='c94b3c82-15fb-4ae4-a380-e6442fa42846'
+            data-markup='html' data-page='9' style='left:1px;top:600px;width:23px;height:14px;'>8.9.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='183271b2-ebea-4f47-bd11-d481eb7deb08'
+            data-markup='none' data-page='9' style='left:25px;top:645px;width:429px;height:14px;'>Si EL CLIENTE empleara
+            total o parcialmente el préstamo en objeto distinto al concedido.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='d468e2f6-68ab-4a9d-9c8e-d80663afb6e7'
+            data-markup='html' data-page='9' style='left:-1px;top:645px;width:23px;height:14px;'>8.10.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='e186fc38-02e7-40b4-a8e6-813600d17527'
+            data-markup='none' data-page='9' style='left:26px;top:673px;width:427px;height:105px;'>Si EL CLIENTE
+            efectuara cualquier acto de disposición patrimonial que a criterio de BanBif pudiese afectar en forma
+            negativa su capacidad de pago o su solvencia o, en general, en el caso que a juicio de BanBif la situación
+            económica o financiera de EL CLIENTE causara fundados temores respecto a la recuperación del crédito, como
+            puede ser recibir calificación como dudoso o pérdida en el sistema financiero, o si se le hubiera cerrado
+            alguna cuenta corriente por girar contra ella sin la correspondiente provisión de fondos, sea en BanBif o en
+            otra empresa del sistema financiero.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='269da31b-fad5-4fe5-a5d8-17ff1934e0b9'
+            data-markup='html' data-page='9' style='left:1px;top:673px;width:23px;height:14px;'>8.11.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='f1951a44-9d50-48bd-a412-157648c04fde'
+            data-markup='none' data-page='9' style='left:27px;top:778px;width:425px;height:31px;'>Si EL CLIENTE no
+            permitiera u obstaculizara a BanBif, Fondo MIVIVIENDA S.A. y/o COFIDE o a quienes éste designe, la
+            inspección de alguno de los bienes dados en garantía.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='9cad72bf-db31-4613-bd16-81302198cea8'
+            data-markup='html' data-page='9' style='left:0px;top:778px;width:23px;height:14px;'>8.12.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='b6968ca4-e0c5-459d-b98f-1c28b76a850f'
+            data-markup='none' data-page='9' style='left:28px;top:821px;width:423px;height:31px;'>Si la propiedad de EL
+            CLIENTE respecto al bien dado en garantía fuera discutida judicial o extrajudicialmente.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='1e0be986-a342-4276-9c8e-53048d962cd3'
+            data-markup='html' data-page='9' style='left:1px;top:821px;width:23px;height:14px;'>8.13.</div>
+    </div>
+    <div class='jr-page' data-page='10' style='width:595px;height:842px;'>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='b6968ca4-e0c5-459d-b98f-1c28b76a850f'
+            data-markup='none' data-page='10' style='left:28px;top:-21px;width:423px;height:31px;'>Si la propiedad de EL
+            CLIENTE respecto al bien dado en garantía fuera discutida judicial o extrajudicialmente.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='f6dccfeb-4694-4d65-ad77-28664205e3d5'
+            data-markup='none' data-page='10' style='left:28px;top:22px;width:428px;height:14px;'>Si se destinara el
+            bien otorgado en garantía a un uso distinto del de vivienda.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='21d61e38-55c7-40dd-bdf7-43814d09f311'
+            data-markup='html' data-page='10' style='left:0px;top:22px;width:23px;height:14px;'>8.14.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='85d1fd17-700c-4cfe-a2ff-c243ca202dc1'
+            data-markup='none' data-page='10' style='left:28px;top:51px;width:428px;height:14px;'>Si EL CLIENTE mantiene
+            obligaciones vencidas pendientes de pago o cumplimiento a favor de BanBif.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='7ae9dfcd-a0c8-4a57-9b47-04fa0e7c6577'
+            data-markup='html' data-page='10' style='left:1px;top:51px;width:23px;height:14px;'>8.15.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='b4408b8e-d0ed-41d2-9337-eb5c92564fca'
+            data-markup='none' data-page='10' style='left:28px;top:78px;width:428px;height:14px;'>Si EL CLIENTE no
+            cumple con reembolsar el BBP así como sus intereses a BanBif en los supuestos descritos en la cláusula 4.3
+            del presente contrato.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='2c69361b-2e92-49ea-838e-9a6bc9c2bed3'
+            data-markup='html' data-page='10' style='left:0px;top:78px;width:23px;height:14px;'>8.16.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='99a4d209-bcca-4cf8-82b7-27448913fab5'
+            data-markup='none' data-page='10' style='left:28px;top:107px;width:424px;height:14px;'>Si EL CLIENTE realiza
+            operaciones irregulares, fraudulentas, ilícitas o que no guarden relación con su actividad personal,
+            laboral, profesional o económica, o si realiza operaciones que puedan perjudicar a BanBif o a otros
+            clientes.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='95348e53-ee2d-43af-ad61-7cd8aec4f002'
+            data-markup='html' data-page='10' style='left:1px;top:107px;width:23px;height:14px;'>8.17.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='a986b313-08fd-49c3-a77f-52246d5aaa83'
+            data-markup='html' data-page='10' style='left:28px;top:134px;width:425px;height:330px;'>Como consecuencia de
+            la aplicación de las normas prudenciales emitidas por la Superintendencia de Banca, Seguros y AFP (SBS),
+            tales como las referidas a la administración del riesgo de sobreendeudamiento de deudores minoristas, por
+            consideraciones del perfil de EL CLIENTE vinculadas al sistema de prevención del lavado de activos o del
+            financiamiento del terrorismo o por falta de transparencia de EL CLIENTE.<br><br> Se entiende que hay falta
+            de transparencia de EL CLIENTE cuando cualquier información o documentación proporcionada a BanBif resultase
+            falsa, incorrecta o adulterada, o cuando EL CLIENTE no cumpliese o se negare a aportar toda la información o
+            documentación que le sea solicitada por BanBif, a su satisfacción, incluyendo información o documentos
+            relacionados con su identificación o con operaciones que realice con BanBif, o si de la evaluación realizada
+            por BanBif se desprende que hay información inexacta, incompleta, falsa, inconsistente, contradictoria o que
+            no tenga debida correspondencia con otra información declarada o proporcionada anteriormente, o si la
+            información o las operaciones que realice EL CLIENTE no guardan relación con su perfil financiero o no
+            existe la debida correspondencia entre el origen, el tipo o características de la transacción con respecto a
+            su actividad profesional, civil o comercial o que todo ello pueda repercutir negativamente en el riesgo de
+            reputación o legal que enfrenta BanBif. La información antes indicada puede incluso estar referida a:
+            nombre, dirección, documento oficial de identidad, teléfono, correo electrónico, ocupación, nivel de
+            ingresos o a cualquier otra información proporcionada a BanBif.<br><br> En estos casos BanBif comunicará la
+            resolución del contrato dentro de los siete (07) días posteriores a dicha resolución, conforme a lo
+            estipulado en el antepenúltimo párrafo de la cláusula 14 de este contrato.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='c18788e3-16a2-4c0a-870b-bf454642fca7'
+            data-markup='html' data-page='10' style='left:1px;top:134px;width:23px;height:14px;'>8.18.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='4d35c32a-6b82-4422-8aa9-1c1359f6dda7'
+            data-markup='none' data-page='10' style='left:31px;top:479px;width:424px;height:45px;'>Por disposición
+            Judicial o de otra autoridad competente o cuando esté previsto en la ley, en las normas emitidas por
+            autoridad competente y en aquellos casos previamente comunicados por BanBif.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='385fcbee-361c-4d77-8889-81bb4f11347c'
+            data-markup='html' data-page='10' style='left:1px;top:479px;width:24px;height:14px;'>8.19.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='8a9fbea9-77fe-4b1b-9f20-61ab1de76f95'
+            data-markup='html' data-page='10' style='left:32px;top:533px;width:424px;height:522px;'>Otras causales que
+            determine el Fondo MIVIVIENDA S.A.<br><br> De conformidad con el artículo 1430° del Código Civil, la
+            resolución del contrato de préstamo operará de pleno derecho, siendo suficiente que BanBif notifique
+            previamente a EL CLIENTE de su decisión por escrito, sin ninguna otra formalidad distinta, manteniéndose
+            subsistente la hipoteca en garantía de la obligación de pago inmediato de cargo de EL CLIENTE, procediendo
+            sin más trámite BanBif a cobrar su acreencia, conformada por el saldo insoluto del préstamo más los
+            intereses compensatorios y moratorios, comisiones, gastos y otros que se hubieran devengado, suma total
+            liquidada que EL CLIENTE se obliga a pagar inmediatamente, ejecutándose en caso contrario las garantías que
+            correspondan y, en especial, la hipoteca que por este acto se constituye en la forma prevista por el Código
+            Procesal Civil.<br><br> En los casos señalados en los numerales 8.1, 8.2 y 8.18 de esta cláusula, la
+            resolución del presente contrato operará de pleno derecho por su sola ocurrencia sin necesidad de
+            comunicación a EL CLIENTE, la cual será cursada dentro del plazo de siete (7) días calendarios posteriores,
+            en concordancia con la Resolución SBS N° 3274-2017, sus sustitutorias, modificatorias y
+            complementarias.<br><br> Se deja expresa constancia que la resolución del contrato de préstamo por
+            incumplimiento de las obligaciones que EL CLIENTE asume, no conlleva la inexigibilidad de las obligaciones
+            garantizadas, o no restitución o reembolso de las prestaciones a favor de BanBif que están conformadas por
+            los conceptos que como acreencia se describen en el párrafo anterior al precedente, ni a la extinción de la
+            hipoteca que se constituye ni de ninguna otra garantía que respalde el préstamo, pues en todo caso de
+            resolución o de terminación del contrato de préstamo dichas garantías se mantendrán plenamente vigentes,
+            encontrándose precisamente en tales casos BanBif facultado a ejecutar el(los) inmueble(s) gravado(s) y/u
+            otras garantías constituidas en su favor, para aplicar el producto de dichas ejecuciones al pago de su
+            acreencia.<br><br> Si EL CLIENTE o cualquiera de los intervinientes no suscribiesen la escritura pública a
+            que dé lugar la minuta de adquisición del inmueble que se financia y la presente cláusula adicional, dentro
+            de los siguientes treinta (30) días calendarios de extendida la escritura pública, BanBif podrá resolver o
+            dejar sin efecto este contrato, restituyéndose a BanBif la suma desembolsada, sin ninguna responsabilidad
+            para éste. En tal caso, EL CLIENTE deberá pagar a BanBif el monto de los intereses que se devenguen desde la
+            fecha del desembolso (fecha de emisión del cheque o del abono en cuenta) hasta la fecha en que BanBif opte
+            por dejar sin efecto este contrato.<br><br> A EL CLIENTE le asiste el derecho de resolver el presente
+            contrato a través del mismo medio o canal utilizado al contratar, previo pago a BanBif del total de la deuda
+            respaldada por la presente garantía, conforme a la cláusula quinta de este contrato.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='aa71e71d-f4bf-4426-bec3-bc253eda46f1'
+            data-markup='html' data-page='10' style='left:1px;top:533px;width:24px;height:22px;'>8.20.</div>
+    </div>
+    <div class='jr-page' data-page='11' style='width:595px;height:842px;'>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='8a9fbea9-77fe-4b1b-9f20-61ab1de76f95'
+            data-markup='html' data-page='11' style='left:32px;top:-309px;width:424px;height:522px;'>Otras causales que
+            determine el Fondo MIVIVIENDA S.A.<br><br> De conformidad con el artículo 1430° del Código Civil, la
+            resolución del contrato de préstamo operará de pleno derecho, siendo suficiente que BanBif notifique
+            previamente a EL CLIENTE de su decisión por escrito, sin ninguna otra formalidad distinta, manteniéndose
+            subsistente la hipoteca en garantía de la obligación de pago inmediato de cargo de EL CLIENTE, procediendo
+            sin más trámite BanBif a cobrar su acreencia, conformada por el saldo insoluto del préstamo más los
+            intereses compensatorios y moratorios, comisiones, gastos y otros que se hubieran devengado, suma total
+            liquidada que EL CLIENTE se obliga a pagar inmediatamente, ejecutándose en caso contrario las garantías que
+            correspondan y, en especial, la hipoteca que por este acto se constituye en la forma prevista por el Código
+            Procesal Civil.<br><br> En los casos señalados en los numerales 8.1, 8.2 y 8.18 de esta cláusula, la
+            resolución del presente contrato operará de pleno derecho por su sola ocurrencia sin necesidad de
+            comunicación a EL CLIENTE, la cual será cursada dentro del plazo de siete (7) días calendarios posteriores,
+            en concordancia con la Resolución SBS N° 3274-2017, sus sustitutorias, modificatorias y
+            complementarias.<br><br> Se deja expresa constancia que la resolución del contrato de préstamo por
+            incumplimiento de las obligaciones que EL CLIENTE asume, no conlleva la inexigibilidad de las obligaciones
+            garantizadas, o no restitución o reembolso de las prestaciones a favor de BanBif que están conformadas por
+            los conceptos que como acreencia se describen en el párrafo anterior al precedente, ni a la extinción de la
+            hipoteca que se constituye ni de ninguna otra garantía que respalde el préstamo, pues en todo caso de
+            resolución o de terminación del contrato de préstamo dichas garantías se mantendrán plenamente vigentes,
+            encontrándose precisamente en tales casos BanBif facultado a ejecutar el(los) inmueble(s) gravado(s) y/u
+            otras garantías constituidas en su favor, para aplicar el producto de dichas ejecuciones al pago de su
+            acreencia.<br><br> Si EL CLIENTE o cualquiera de los intervinientes no suscribiesen la escritura pública a
+            que dé lugar la minuta de adquisición del inmueble que se financia y la presente cláusula adicional, dentro
+            de los siguientes treinta (30) días calendarios de extendida la escritura pública, BanBif podrá resolver o
+            dejar sin efecto este contrato, restituyéndose a BanBif la suma desembolsada, sin ninguna responsabilidad
+            para éste. En tal caso, EL CLIENTE deberá pagar a BanBif el monto de los intereses que se devenguen desde la
+            fecha del desembolso (fecha de emisión del cheque o del abono en cuenta) hasta la fecha en que BanBif opte
+            por dejar sin efecto este contrato.<br><br> A EL CLIENTE le asiste el derecho de resolver el presente
+            contrato a través del mismo medio o canal utilizado al contratar, previo pago a BanBif del total de la deuda
+            respaldada por la presente garantía, conforme a la cláusula quinta de este contrato.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='9304c33f-6fe4-4ffc-937a-4f2c2f0b1e93'
+            data-markup='html' data-page='11' style='left:-1px;top:215px;width:454px;height:111px;'><b>NOVENA:
+                VALORIZACION PARA EFECTOS DE EJECUCION DE LA GARANTIA</b><br><br> Para el caso de ejecución del inmueble
+            hipotecado por este acto que se describe en el Anexo del presente contrato, ambas partes han convenido en
+            valorizar el mismo en la suma señalada en el anotado Anexo, acordándose que este valor aprobado de común
+            acuerdo no requerirá ser actualizado ni hacerse nueva tasación del inmueble para los fines de su ejecución,
+            salvo que BanBif lo estime así por conveniente. Las dos terceras partes de esta valorización servirán de
+            base para la subasta, haciéndose las rebajas de Ley por falta de postores, conforme a las normas procesales
+            aplicables.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='4a93c266-f1e2-4ddd-94b9-9ba548ac9531'
+            data-markup='html' data-page='11' style='left:1px;top:356px;width:452px;height:517px;'>BanBif queda además
+            facultado para disponer inspecciones y tasaciones periódicas del inmueble hipotecado durante la vigencia de
+            este contrato, siendo de cargo de EL CLIENTE el costo de las mismas, el cual autoriza debitar en sus
+            cuentas. Asimismo, EL CLIENTE asume la obligación de facilitar el libre acceso a los inmuebles de los
+            inspectores y tasadores que designe BanBif.<br><br> <b>DECIMA: DE LA CESION DE DERECHOS DE
+                BANBIF</b><br><br> EL CLIENTE reconoce y acepta que BanBif podrá ceder sus derechos derivados del
+            presente contrato, ya sea mediante una cesión de derechos o cesión de posición contractual o mediante la
+            constitución de patrimonio autónomo para efectos de su titulización o mecanismos similares, o venta de
+            cartera, o emisión de instrumentos o bonos hipotecarios y/o cualquier otra forma permitida por la ley, a lo
+            que EL CLIENTE presta desde ahora y por el presente documento su consentimiento expreso e irrevocable a
+            dichas cesiones y transferencias, incluyendo las correspondientes a las garantías que pudiere haber
+            constituido a favor de BanBif en respaldo de sus obligaciones, siendo para ello suficiente que BanBif le
+            comunique la identidad del nuevo acreedor o titular de los derechos y garantías cedidos. Será de aplicación
+            supletoria lo dispuesto en los artículos 1206° y siguientes del Código Civil, para el caso de la cesión de
+            derechos y el artículo 1435° y siguientes, para el caso de la cesión de posición contractual.<br><br>
+            <b>DECIMO PRIMERA: PERÍODO DE GRACIA</b><br><br> BanBif podrá conceder a EL CLIENTE períodos de gracia para
+            el pago de su préstamo, al momento de otorgar el crédito o posteriormente, quedando expresamente convenido
+            que los intereses compensatorios, comisiones y gastos que se generen durante dicho período serán
+            capitalizados.<br><br> <b>DECIMO SEGUNDA: DE LOS TRIBUTOS Y GASTOS</b><br><br> Cualquier tributo, tasa o
+            contribución que pueda gravar este contrato o las demás obligaciones asumidas como consecuencia de este
+            contrato, será de cargo exclusivo y/o trasladado a EL CLIENTE, lo que se adicionará en su caso al importe de
+            las cuotas o armadas mensuales comprometidas.<br><br> Todos los gastos, derechos y tributos que se deriven
+            de este contrato, las comisiones y demás tarifas establecidas en la Hoja de Resumen que forma parte del
+            presente documento, los gastos notariales, los de su inscripción en el Registro de la Propiedad Inmueble y
+            los de su cancelación llegado el caso, incluyendo un testimonio y dos copias simples para BanBif, son de
+            cargo y cuenta exclusiva de EL CLIENTE, quien en este acto autoriza el débito en sus cuentas.<br><br>
+            <b>DECIMO TERCERA: INTERVENCION DEL CONYUGE</b>
+        </div>
+    </div>
+    <div class='jr-page' data-page='12' style='width:595px;height:842px;'>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='4a93c266-f1e2-4ddd-94b9-9ba548ac9531'
+            data-markup='html' data-page='12' style='left:1px;top:-486px;width:452px;height:517px;'>BanBif queda además
+            facultado para disponer inspecciones y tasaciones periódicas del inmueble hipotecado durante la vigencia de
+            este contrato, siendo de cargo de EL CLIENTE el costo de las mismas, el cual autoriza debitar en sus
+            cuentas. Asimismo, EL CLIENTE asume la obligación de facilitar el libre acceso a los inmuebles de los
+            inspectores y tasadores que designe BanBif.<br><br> <b>DECIMA: DE LA CESION DE DERECHOS DE
+                BANBIF</b><br><br> EL CLIENTE reconoce y acepta que BanBif podrá ceder sus derechos derivados del
+            presente contrato, ya sea mediante una cesión de derechos o cesión de posición contractual o mediante la
+            constitución de patrimonio autónomo para efectos de su titulización o mecanismos similares, o venta de
+            cartera, o emisión de instrumentos o bonos hipotecarios y/o cualquier otra forma permitida por la ley, a lo
+            que EL CLIENTE presta desde ahora y por el presente documento su consentimiento expreso e irrevocable a
+            dichas cesiones y transferencias, incluyendo las correspondientes a las garantías que pudiere haber
+            constituido a favor de BanBif en respaldo de sus obligaciones, siendo para ello suficiente que BanBif le
+            comunique la identidad del nuevo acreedor o titular de los derechos y garantías cedidos. Será de aplicación
+            supletoria lo dispuesto en los artículos 1206° y siguientes del Código Civil, para el caso de la cesión de
+            derechos y el artículo 1435° y siguientes, para el caso de la cesión de posición contractual.<br><br>
+            <b>DECIMO PRIMERA: PERÍODO DE GRACIA</b><br><br> BanBif podrá conceder a EL CLIENTE períodos de gracia para
+            el pago de su préstamo, al momento de otorgar el crédito o posteriormente, quedando expresamente convenido
+            que los intereses compensatorios, comisiones y gastos que se generen durante dicho período serán
+            capitalizados.<br><br> <b>DECIMO SEGUNDA: DE LOS TRIBUTOS Y GASTOS</b><br><br> Cualquier tributo, tasa o
+            contribución que pueda gravar este contrato o las demás obligaciones asumidas como consecuencia de este
+            contrato, será de cargo exclusivo y/o trasladado a EL CLIENTE, lo que se adicionará en su caso al importe de
+            las cuotas o armadas mensuales comprometidas.<br><br> Todos los gastos, derechos y tributos que se deriven
+            de este contrato, las comisiones y demás tarifas establecidas en la Hoja de Resumen que forma parte del
+            presente documento, los gastos notariales, los de su inscripción en el Registro de la Propiedad Inmueble y
+            los de su cancelación llegado el caso, incluyendo un testimonio y dos copias simples para BanBif, son de
+            cargo y cuenta exclusiva de EL CLIENTE, quien en este acto autoriza el débito en sus cuentas.<br><br>
+            <b>DECIMO TERCERA: INTERVENCION DEL CONYUGE</b>
+        </div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='c2f427a7-1f81-4aff-bbe2-e509053ac6c1'
+            data-markup='html' data-page='12' style='left:-1px;top:100px;width:455px;height:128px;'><b>DECIMO CUARTA:
+                DIFUSIÓN Y MODIFICACIÓN DE LAS TARIFAS Y CONDICIONES CONTRACTUALES</b><br><br> EL CLIENTE declara que
+            BanBif ha cumplido con proporcionarle previamente a la suscripción del presente Contrato, toda la
+            información necesaria sobre las características, términos y condiciones de este contrato, lo que le ha
+            permitido tomar una decisión adecuadamente informada respecto del producto o servicio objeto de este
+            contrato. Asimismo, EL CLIENTE manifiesta que se ha informado a su satisfacción sobre los costos vinculados
+            al presente contrato antes de contratar, por lo que la</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='9168933d-e53c-4cd0-84e7-a59b77302908'
+            data-markup='none' data-page='12' style='left:0px;top:31px;width:452px;height:31px;'>De conformidad con los
+            artículos 292° y 315° del Código Civil, interviene en este contrato el o la cónyuge de EL CLIENTE</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='41ad7f1c-3bf0-4c39-b470-94b8ab777c96'
+            data-markup='none' data-page='12' style='left:250px;top:44px;width:209px;height:20px;'>, para declarar su
+            expresa y plena aceptación,</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='9d98e203-b03c-41c9-b2f7-07e9ec56a8ba'
+            data-markup='none' data-page='12' style='left:-1px;top:60px;width:454px;height:29px;'>así como su
+            conformidad a todos los términos de esta Escritura Pública, que involucra a la sociedad conyugal, asumiendo
+            responsabilidad solidaria con su cónyuge.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='81405ecb-94f8-4ee7-82ff-fb2221e1aeb9'
+            data-markup='html' data-page='12' style='left:-1px;top:240px;width:453px;height:712px;'>suscripción del
+            presente contrato constituye una aceptación y conformidad sobre sus costos y condiciones. EL CLIENTE
+            reconoce y acepta que la versión vigente de este contrato, con las condiciones bajo las cuales se prestan
+            los servicios, las tasas de interés compensatorias y moratorias, comisiones, gastos y otros conceptos
+            aplicables a ellos se exhiben y están a disposición de EL CLIENTE en las oficinas de BanBif y en la página
+            Web www.banbif.com.pe, en la sección “Formularios Contractuales Personas”, donde se visualizan estas
+            cláusulas generales de contratación, junto con la hoja resumen correspondiente, que se encuentra publicada
+            en la misma sección.<br><br> La variación, restricción, supresión o modificación de cualquier naturaleza de
+            los términos y condiciones de este contrato, de las tasas de interés compensatorias y moratorias,
+            comisiones, gastos, del cronograma de pagos y de cualquier otra estipulación, así como las modificaciones
+            contractuales referidas a la resolución del contrato por causal distinta al incumplimiento, la limitación o
+            exoneración de responsabilidad por parte de BanBif y la modificación o supresión de los servicios brindados
+            o la inclusión de nuevos que BanBif decida incorporar, serán previamente informados a EL CLIENTE por
+            cualquiera de los siguientes medios: mediante comunicación cursada a su domicilio físico o a su dirección de
+            correo electrónico, dentro de los estados de cuenta, vouchers de operaciones, avisos de vencimiento o
+            cualquier documentación que se curse al cliente o en comunicación aparte, según sea el caso; mediante
+            comunicación telefónica (por servicio de voz, datos o internet, mediante llamadas, mensajes de texto,
+            mensajería instantánea, aplicaciones de celular u otros) o, mediante mensajes a través del Sistema de Banca
+            por Internet que permitan dejar constancia de la comunicación. En caso EL CLIENTE no se encontrara o no
+            pudiese ser contactado en su domicilio físico, en su dirección de correo electrónico o en su número
+            telefónico; en caso no hubiese comunicado a BanBif el cambio de los mismos; en caso la modificación no
+            genere un perjuicio para EL CLIENTE o; en el caso de modificaciones contractuales de aspectos distintos a
+            los previamente indicados, esta comunicación se entenderá efectuada con las respectivas publicaciones en las
+            oficinas de BanBif, en la página Web www.banbif.com.pe o a través de publicaciones o mensajes en sus redes
+            sociales, prensa escrita, televisiva, radial u otros medios de comunicación que BanBif pudiera utilizar,
+            debiendo EL CLIENTE, de ser el caso, informarse de su cronograma de pagos en las oficinas de BanBif.
+            Asimismo, BanBif informará en sus oficinas, página web y/u otro mecanismo o canal de comunicación que pueda
+            implementar a futuro, sobre las disposiciones aprobadas por normas de carácter imperativo que impacten en
+            las cláusulas generales de contratación previamente aprobadas.<br><br> Las partes acuerdan que los medios de
+            comunicación descritos en el párrafo anterior son los más idóneos para que EL CLIENTE esté en capacidad de
+            tomar previo y adecuado conocimiento de las modificaciones antes mencionadas. Asimismo, estas modificaciones
+            y la fecha o momento en que entrarán en vigencia serán comunicadas con una anticipación no menor de cuarenta
+            y cinco (45) días calendario, salvo que las modificaciones impliquen opciones o derechos que constituyan
+            facilidades adicionales a las existentes o condiciones más favorables para EL CLIENTE y que no impliquen la
+            pérdida ni la sustitución de condiciones previamente establecidas, en cuyo caso las nuevas condiciones
+            podrán ser aplicadas de manera inmediata. Las nuevas condiciones serán de cumplimiento obligatorio, sin
+            necesidad que ambas parten suscriban o celebren un nuevo contrato.<br><br> El nuevo cronograma que se emita
+            en aplicación de esta cláusula o por común acuerdo será de cumplimiento obligatorio, sin necesidad que ambas
+            partes suscriban o celebren una adenda o nuevo contrato y prevalecerá sobre el anterior cronograma, aun
+            cuando éste conste por Escritura Pública.<br><br> EL CLIENTE autoriza a que, para las modificaciones
+            contractuales que son informadas en la forma prevista en esta cláusula, incluyendo la supresión de los
+            servicios brindados o la inclusión de nuevos servicios por BanBif, su silencio sea entendido como aceptación
+            de la modificación, supresión o inclusión, según corresponda. Asimismo, la ejecución de prestaciones, la
+            solicitud de nuevas</div>
+    </div>
+    <div class='jr-page' data-page='13' style='width:595px;height:842px;'>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='81405ecb-94f8-4ee7-82ff-fb2221e1aeb9'
+            data-markup='html' data-page='13' style='left:-1px;top:-602px;width:453px;height:712px;'>suscripción del
+            presente contrato constituye una aceptación y conformidad sobre sus costos y condiciones. EL CLIENTE
+            reconoce y acepta que la versión vigente de este contrato, con las condiciones bajo las cuales se prestan
+            los servicios, las tasas de interés compensatorias y moratorias, comisiones, gastos y otros conceptos
+            aplicables a ellos se exhiben y están a disposición de EL CLIENTE en las oficinas de BanBif y en la página
+            Web www.banbif.com.pe, en la sección “Formularios Contractuales Personas”, donde se visualizan estas
+            cláusulas generales de contratación, junto con la hoja resumen correspondiente, que se encuentra publicada
+            en la misma sección.<br><br> La variación, restricción, supresión o modificación de cualquier naturaleza de
+            los términos y condiciones de este contrato, de las tasas de interés compensatorias y moratorias,
+            comisiones, gastos, del cronograma de pagos y de cualquier otra estipulación, así como las modificaciones
+            contractuales referidas a la resolución del contrato por causal distinta al incumplimiento, la limitación o
+            exoneración de responsabilidad por parte de BanBif y la modificación o supresión de los servicios brindados
+            o la inclusión de nuevos que BanBif decida incorporar, serán previamente informados a EL CLIENTE por
+            cualquiera de los siguientes medios: mediante comunicación cursada a su domicilio físico o a su dirección de
+            correo electrónico, dentro de los estados de cuenta, vouchers de operaciones, avisos de vencimiento o
+            cualquier documentación que se curse al cliente o en comunicación aparte, según sea el caso; mediante
+            comunicación telefónica (por servicio de voz, datos o internet, mediante llamadas, mensajes de texto,
+            mensajería instantánea, aplicaciones de celular u otros) o, mediante mensajes a través del Sistema de Banca
+            por Internet que permitan dejar constancia de la comunicación. En caso EL CLIENTE no se encontrara o no
+            pudiese ser contactado en su domicilio físico, en su dirección de correo electrónico o en su número
+            telefónico; en caso no hubiese comunicado a BanBif el cambio de los mismos; en caso la modificación no
+            genere un perjuicio para EL CLIENTE o; en el caso de modificaciones contractuales de aspectos distintos a
+            los previamente indicados, esta comunicación se entenderá efectuada con las respectivas publicaciones en las
+            oficinas de BanBif, en la página Web www.banbif.com.pe o a través de publicaciones o mensajes en sus redes
+            sociales, prensa escrita, televisiva, radial u otros medios de comunicación que BanBif pudiera utilizar,
+            debiendo EL CLIENTE, de ser el caso, informarse de su cronograma de pagos en las oficinas de BanBif.
+            Asimismo, BanBif informará en sus oficinas, página web y/u otro mecanismo o canal de comunicación que pueda
+            implementar a futuro, sobre las disposiciones aprobadas por normas de carácter imperativo que impacten en
+            las cláusulas generales de contratación previamente aprobadas.<br><br> Las partes acuerdan que los medios de
+            comunicación descritos en el párrafo anterior son los más idóneos para que EL CLIENTE esté en capacidad de
+            tomar previo y adecuado conocimiento de las modificaciones antes mencionadas. Asimismo, estas modificaciones
+            y la fecha o momento en que entrarán en vigencia serán comunicadas con una anticipación no menor de cuarenta
+            y cinco (45) días calendario, salvo que las modificaciones impliquen opciones o derechos que constituyan
+            facilidades adicionales a las existentes o condiciones más favorables para EL CLIENTE y que no impliquen la
+            pérdida ni la sustitución de condiciones previamente establecidas, en cuyo caso las nuevas condiciones
+            podrán ser aplicadas de manera inmediata. Las nuevas condiciones serán de cumplimiento obligatorio, sin
+            necesidad que ambas parten suscriban o celebren un nuevo contrato.<br><br> El nuevo cronograma que se emita
+            en aplicación de esta cláusula o por común acuerdo será de cumplimiento obligatorio, sin necesidad que ambas
+            partes suscriban o celebren una adenda o nuevo contrato y prevalecerá sobre el anterior cronograma, aun
+            cuando éste conste por Escritura Pública.<br><br> EL CLIENTE autoriza a que, para las modificaciones
+            contractuales que son informadas en la forma prevista en esta cláusula, incluyendo la supresión de los
+            servicios brindados o la inclusión de nuevos servicios por BanBif, su silencio sea entendido como aceptación
+            de la modificación, supresión o inclusión, según corresponda. Asimismo, la ejecución de prestaciones, la
+            solicitud de nuevas</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='23bd5b9e-06d8-4b9d-9d81-d45a0e01a60e'
+            data-markup='html' data-page='13' style='left:0px;top:123px;width:453px;height:711px;'>prestaciones, el pago
+            de cuotas, la utilización de servicios o la continuación del presente contrato de cualquier forma por parte
+            de EL CLIENTE, aun cuando haya manifestado su disconformidad con las modificaciones introducidas,
+            significará el consentimiento de EL CLIENTE para la continuación del contrato con el nuevo cronograma y/o
+            las nuevas condiciones, sin requerir de aceptación escrita o formalidad alguna, por lo que la voluntad de
+            resolver el contrato deberá manifestarse en forma expresa e inequívoca. En caso EL CLIENTE no aceptase tales
+            modificaciones y deseare concluir este contrato, deberá comunicarle a BanBif por escrito o a través del
+            mismo canal utilizado al contratar, tal disconformidad y voluntad de concluir el contrato, quedando desde
+            entonces resuelto, siempre y cuando EL CLIENTE haya cumplido con cancelar previamente todos los pagos que
+            sean de su cargo, otorgándose a EL CLIENTE, en caso lo considere necesario, un plazo de cuarenta y cinco
+            (45) días calendario a partir de la fecha de la comunicación de resolución del contrato por parte de EL
+            CLIENTE a BanBif, para que pueda efectuar dicha cancelación. El otorgamiento de este plazo adicional para
+            efectuar el pago total de la obligación en forma previa a la resolución del contrato, no libera a EL CLIENTE
+            de efectuar el pago correspondiente al cargo producto de la modificación contractual, una vez cumplido el
+            plazo de preaviso señalado en el tercer párrafo de esta cláusula, en caso corresponda, debiendo también
+            pagar las demás obligaciones dentro de las fechas de vencimiento, en tanto no se resuelva el contrato. En el
+            caso de la incorporación de servicios que no se encuentren directamente relacionados al producto o servicio
+            contratado, EL CLIENTE tendrá la facultad de aceptar la modificación asociada a la incorporación de dicho
+            servicio, sin que su negativa implique una resolución de este contrato.<br><br> Las modificaciones que
+            comunique BanBif en virtud a la presente cláusula pueden deberse a cambios en las condiciones en la economía
+            nacional o internacional; el funcionamiento o tendencias de los mercados; la competencia; la adopción de
+            políticas de gobierno o de Estado; impacto de las disposiciones legales sobre tasas de interés, comisiones,
+            gastos, penalidades costos, características, definición o condiciones de los productos y servicios
+            bancarios; inflación o deflación; devaluación o revaluación de la moneda; campañas promocionales; evaluación
+            crediticia del cliente o de su empleador, de ser el caso; encarecimiento de los servicios prestados por
+            terceros cuyos costos son trasladados a EL CLIENTE o de los costos de prestación de los productos y
+            servicios ofrecidos por BanBif; crisis financiera; por hechos ajenos a la voluntad de las partes; conmoción
+            social; desastres naturales; terrorismo; guerra; caso fortuito o fuerza mayor.<br><br> EL CLIENTE declara
+            conocer que por mandato legal BanBif puede elegir no contratar o modificar los contratos celebrados con los
+            usuarios en aspectos distintos a las tasas de interés, comisiones o gastos, e incluso resolverlos, sin el
+            aviso previo a que se refiere la presente cláusula, como consecuencia de la aplicación de las normas
+            prudenciales emitidas por la Superintendencia de Banca, Seguros y AFP, tales como las referidas a la
+            administración del riesgo de sobreendeudamiento de deudores minoristas, por consideraciones del perfil del
+            cliente vinculadas al sistema de prevención del lavado de activos o del financiamiento del terrorismo o por
+            falta de transparencia de los usuarios conforme a lo estipulado en el numeral 8.18 de la cláusula 8 del
+            presente contrato. En estos casos BanBif podrá prescindir de la comunicación previa, remitiendo en su lugar
+            una comunicación al domicilio físico o de correo electrónico, dentro de los estados de cuenta, en los avisos
+            de vencimiento o cualquier documentación que se le curse o en comunicación aparte, según sea el caso; o, por
+            vía telefónica (por servicio de voz, datos o internet, mediante llamadas, mensajes de texto, mensajería
+            instantánea, aplicaciones de celular u otros) o, mediante mensajes a través del Sistema de Banca por
+            Internet que permitan dejar constancia de la comunicación, dentro de los siete (07) días posteriores a dicha
+            modificación o resolución unilateral, ello en concordancia con lo dispuesto en los incisos b) y c) del
+            artículo 50º y en el artículo 85° del Código de Protección y Defensa del Consumidor, aprobado por Ley N°
+            29571, así como en el artículo 41° de la Resolución SBS N° 3274-2017, sus sustitutorias, modificatorias y
+            complementarias.<br><br></div>
+    </div>
+    <div class='jr-page' data-page='14' style='width:595px;height:842px;'>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='95a62e4d-8f6b-4210-9045-a680a9cb44a9'
+            data-markup='html' data-page='14' style='left:4px;top:4px;width:445px;height:679px;'>Las partes acuerdan que
+            la presente cláusula se ajusta a lo dispuesto en el Código de Protección y Defensa del Consumidor, la Ley
+            Complementaria a la Ley de Protección al Consumidor en materia de servicios financieros, aprobada mediante
+            Ley N° 28587 y el Reglamento de Gestión de Conducta de Mercado del Sistema Financiero, aprobado por
+            Resolución SBS N° 3274-2017 y en las normas que las sustituyan, modifiquen o complementen.<br><br> <b>DECIMO
+                QUINTA: HOJA RESUMEN</b><br><br> EL CLIENTE declara que forma parte del presente contrato la Hoja
+            Resumen anexa, la cual muestra, entre otros, el detalle de las tasas de interés compensatorias y moratorias,
+            las comisiones y los gastos que serán de cuenta de EL CLIENTE y resume algunas de las obligaciones
+            contraídas por EL CLIENTE y/o por BanBif que sean relevantes para ambas partes. EL CLIENTE con su firma en
+            el presente contrato, deja constancia que tiene cabal comprensión y conocimiento pleno de las condiciones
+            establecidas en la Hoja Resumen, así como de las responsabilidades que se deriven de este contrato.
+            Asimismo, EL CLIENTE reconoce y acepta que la información consignada en la Hoja Resumen podrá ser variada
+            por BanBif, previo aviso en la forma establecida en este contrato.<br><br> <b>DECIMO SEXTA: SEÑALAMIENTO DE
+                DOMICILIO</b><br><br> Las partes señalan como sus domicilios para cualquier acto, efecto, comunicación o
+            notificación que se derive del presente contrato, el indicado en la introducción. Cualquier variación
+            domiciliaria, para que sea oponible, deberá ser comunicada por escrito a la otra parte y surtirá efecto a
+            los quince (15) días calendarios desde la fecha de recepción de la comunicación en tal sentido, siempre que
+            el nuevo domicilio, para efectos de este contrato, se encuentre ubicado dentro del radio urbano de la ciudad
+            donde se suscribe el presente contrato. En el supuesto que EL CLIENTE hubiese señalado domicilios distintos
+            a los indicados para efectos del presente contrato, BanBif podrá remitir las comunicaciones o notificaciones
+            que sean necesarias a cualquiera de ellos.<br><br> <b>DECIMO SETIMA: ATENCION DE RECLAMOS</b><br><br> El
+            Área de Atención de Reclamos de BanBif responderá dentro del plazo de 15 días hábiles de su recepción, los
+            reclamos que le dirija EL CLIENTE. Dicho plazo podrá extenderse siempre que, por la naturaleza del reclamo,
+            se requiera el pronunciamiento previo de un tercero, lo que será comunicado a EL CLIENTE dentro del
+            mencionado plazo, explicando las razones de la demora y precisando el plazo estimado de respuesta. Las
+            distintas instancias ante las que también podría recurrir EL CLIENTE para presentar reclamos y/o denuncias
+            por las operaciones y servicios que realice son: el Defensor del Cliente Financiero, la Superintendencia de
+            Banca, Seguros y Administradoras de Fondos de Pensiones y el INDECOPI.<br><br> <b>DECIMO OCTAVA: SOLUCION DE
+                CONTROVERSIAS</b><br><br> Para todos los efectos de este contrato, las partes renuncian al fuero de sus
+            domicilios y se someten a la jurisdicción y competencia de los jueces y tribunales de la ciudad en la que se
+            suscribe el presente contrato. Agregue usted, señor Notario, las demás cláusulas de estilo, y sírvase pasar
+            los partes al registro de Propiedad Inmueble de la Oficina Registral que se señala en el Anexo para la
+            inscripción de la hipoteca que se constituye por este acto, cuidando previamente de cursar oficio a dicho
+            Registro Público al momento de recibir la presente minuta, para los efectos del bloqueo de la partida
+            registral del inmueble que se grava a favor de BanBif, en cumplimiento de lo previsto en el artículo 176 de
+            la Ley N° 26702.</div>
+        <div class='jr-el ' data-type='textField' data-key='' data-uuid='5f763241-f0ba-4bf7-9ffe-a9a3be42b98f'
+            data-markup='none' data-page='14' style='left:113px;top:822px;width:16px;height:20px;'>{p_bfDCNombres}</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='a4e35671-c40f-48dc-97a5-c6b624b005dc'
+            data-markup='none' data-page='14' style='left:93px;top:823px;width:6px;height:18px;'>,</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='b28fedad-c8d4-401b-9078-eb429442241a'
+            data-markup='none' data-page='14' style='left:144px;top:821px;width:14px;height:18px;'>de</div>
+        <div class='jr-el ' data-type='textField' data-key='' data-uuid='4994a5d5-e61d-404e-babb-25b2aadc6764'
+            data-markup='none' data-page='14' style='left:171px;top:823px;width:16px;height:20px;'>{p_bfDCNombres}</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='1d143303-fb6c-449d-acd3-513ecbe93619'
+            data-markup='none' data-page='14' style='left:201px;top:822px;width:14px;height:18px;'>de</div>
+        <div class='jr-el ' data-type='textField' data-key='' data-uuid='1b52fa52-4bdc-46d9-8427-a70f2e66d971'
+            data-markup='none' data-page='14' style='left:229px;top:823px;width:16px;height:20px;'>{p_bfDCNombres}</div>
+    </div>
+    <div class='jr-page' data-page='15' style='width:595px;height:842px;'>
+        <div class='jr-el ' data-type='textField' data-key='' data-uuid='4994a5d5-e61d-404e-babb-25b2aadc6764'
+            data-markup='none' data-page='15' style='left:171px;top:-19px;width:16px;height:20px;'>{p_bfDCNombres}</div>
+        <div class='jr-el ' data-type='textField' data-key='' data-uuid='1b52fa52-4bdc-46d9-8427-a70f2e66d971'
+            data-markup='none' data-page='15' style='left:229px;top:-19px;width:16px;height:20px;'>{p_bfDCNombres}</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='7ad441e6-cf19-4c0e-92e4-e8faf3f51223'
+            data-markup='html' data-page='15' style='left:80px;top:93px;width:100px;height:20px;'>
+            .......................................</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='4834d0ae-4b46-41df-907d-40cea5ed4437'
+            data-markup='none' data-page='15' style='left:80px;top:109px;width:100px;height:20px;'>(Firma) EL CLIENTE
+        </div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='a9ef5554-36f7-49df-9a94-da9934465d83'
+            data-markup='html' data-page='15' style='left:309px;top:93px;width:100px;height:20px;'>
+            .......................................</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='ae268006-a5b8-480f-979c-351f0f657fe5'
+            data-markup='none' data-page='15' style='left:309px;top:109px;width:100px;height:20px;'>LA CONYUGE</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='c7ec8846-440c-4767-be8c-03e32b47957a'
+            data-markup='none' data-page='15' style='left:217px;top:193px;width:42px;height:20px;'>BANBIF</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='3f40b3bc-98d7-457e-824c-7cb03f4eea08'
+            data-markup='html' data-page='15' style='left:200px;top:178px;width:92px;height:20px;'>
+            .............................</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='6b6d9e77-efcb-4db6-8636-0245592741f6'
+            data-markup='none' data-page='15' style='left:211px;top:693px;width:39px;height:16px;'>ANEXO</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='0229e21a-cb39-4cb8-9391-3f06d6de0aae'
+            data-markup='html' data-page='15' style='left:1px;top:739px;width:453px;height:43px;'><b>I. MONTO DEL BONO
+                DEL BUEN PAGADOR (BBP) y DEL BBP INTEGRADOR (BBPI):</b><br><br> 1.1 El monto del Bono del Buen Pagador
+            (BBP) asciende a:</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='1512ac85-83b5-4e79-ac6f-075797db119c'
+            data-markup='none' data-page='15' style='left:-1px;top:794px;width:318px;height:20px;'>1.2 El monto del Bono
+            del Buen Pagador Integrador (BBPI) asciende a:</div>
+        <div class='jr-el ' data-type='textField' data-key='' data-uuid='a9f18cf1-cc89-4bd3-9fa5-c1eb1bb769a6'
+            data-markup='none' data-page='15' style='left:316px;top:792px;width:91px;height:14px;'>{p_bfDCNombres}</div>
+        <div class='jr-el ' data-type='textField' data-key='' data-uuid='d964a203-5a14-4ffe-8ac5-64ec24d06777'
+            data-markup='none' data-page='15' style='left:266px;top:766px;width:65px;height:16px;'>{p_bfDCNombres}</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='8fc9f420-6ace-445f-9892-583005638c36'
+            data-markup='none' data-page='15' style='left:405px;top:792px;width:60px;height:20px;'>. (EL</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='ae5e97e5-451a-48b7-99ea-c6802798aec9'
+            data-markup='none' data-page='15' style='left:-1px;top:809px;width:452px;height:43px;'>CLIENTE y BanBif
+            convienen en que si este espacio está en blanco es porque EL CLIENTE no será beneficiario de este bono por
+            no cumplir con las condiciones requeridas para su otorgamiento, conforme a lo previsto en la cláusula 4.2
+            del presente Contrato).</div>
+    </div>
+    <div class='jr-page' data-page='16' style='width:595px;height:842px;'>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='ae5e97e5-451a-48b7-99ea-c6802798aec9'
+            data-markup='none' data-page='16' style='left:-1px;top:-33px;width:452px;height:43px;'>CLIENTE y BanBif
+            convienen en que si este espacio está en blanco es porque EL CLIENTE no será beneficiario de este bono por
+            no cumplir con las condiciones requeridas para su otorgamiento, conforme a lo previsto en la cláusula 4.2
+            del presente Contrato).</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='eba9fe90-e361-4d9f-935e-bbd807e88077'
+            data-markup='html' data-page='16' style='left:0px;top:46px;width:454px;height:44px;'><b>II.- ESTRUCTURA Y
+                CONDICIONES DEL PRÉSTAMO HIPOTECARIO NUEVO MIVIVIENDA:<br><br> 2.1 MONTO DEL PRÉSTAMO APROBADO POR
+                BANBIF:</b></div>
+        <div class='jr-el ' data-type='textField' data-key='' data-uuid='a089817d-58bc-46a9-a54f-8fd477c05879'
+            data-markup='none' data-page='16' style='left:63px;top:103px;width:70px;height:16px;'>{p_bfDCNombres}</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='c80cb578-a980-4723-8a1f-add7d10df942'
+            data-markup='html' data-page='16' style='left:137px;top:103px;width:46px;height:20px;'><b>(</b></div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='aed29252-6f10-458d-a7ba-bfd074ab1eb3'
+            data-markup='html' data-page='16' style='left:347px;top:102px;width:100px;height:20px;'><b>y 00/100
+                Soles).</b></div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='311e293d-d853-4d0e-a521-e9c3d67bb884'
+            data-markup='html' data-page='16' style='left:0px;top:103px;width:100px;height:20px;'>Hasta por <b>S/</b>
+        </div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='e421e9fa-241a-4ec9-abe7-be663dec70d6'
+            data-markup='none' data-page='16' style='left:0px;top:148px;width:176px;height:17px;'>2.2 PLAZO DEL
+            PRÉSTAMO:</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='f7b407ba-dee8-4125-b982-71a6237e119e'
+            data-markup='html' data-page='16' style='left:41px;top:174px;width:46px;height:20px;'><b>(</b></div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='86df3d6f-1faf-4a2e-a078-9c5b4d83d3d4'
+            data-markup='none' data-page='16' style='left:101px;top:175px;width:6px;height:20px;'>)</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='a1cebbc3-9aa8-4060-b211-0708f5011f64'
+            data-markup='none' data-page='16' style='left:107px;top:176px;width:346px;height:20px;'>años, contados a
+            partir de la fecha del desembolso del préstamo. De acuerdo</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='693b05fb-e379-4b14-bcb0-4a2d8c6849ea'
+            data-markup='none' data-page='16' style='left:-1px;top:190px;width:453px;height:31px;'>a lo establecido en
+            el Reglamento de Crédito Nuevo Crédito MIVIVIENDA, el plazo del préstamo no podrá ser menor a 5 años ni
+            mayor a 25 años.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='63626dac-cfce-4e0b-8ad8-d7dbf8bf836c'
+            data-markup='html' data-page='16' style='left:0px;top:250px;width:453px;height:49px;'><b>2.3 INTERÉS
+                COMPENSATORIO Y MORATORIO:</b></div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='606d871b-b1a8-4bc6-89ea-62c3bf573979'
+            data-markup='none' data-page='16' style='left:440px;top:278px;width:9px;height:17px;'>%</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='a0efce57-d917-49bd-8265-7c11c780b23d'
+            data-markup='none' data-page='16' style='left:0px;top:291px;width:5px;height:14px;'>(</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='3b1dc834-1b8b-4573-bf26-ca935becd170'
+            data-markup='none' data-page='16' style='left:89px;top:293px;width:364px;height:14px;'>por ciento) en moneda
+            nacional, Para el cálculo de esta tasa anual se considerará</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='29fbcfbf-c64a-49f1-a53c-2dda1435ecbf'
+            data-markup='html' data-page='16' style='left:0px;top:305px;width:453px;height:175px;'>el año de 360
+            días.<br><br> 2.3.2. El interés moratorio que se aplicará en forma adicional al interés compensatorio en los
+            casos de mora será por el monto señalado en la Hoja Resumen anexa al presente contrato.<br><br><br><br>
+            <b>2.4 CUOTA MENSUAL:</b><br><br> Las cuotas pendientes de reembolso se detallan en el cronograma incluido
+            en la Hoja Resumen. El pago de los conceptos incluidos en el cronograma quedará también garantizado con la
+            garantía que se constituya.
+        </div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='67fadf72-e06a-49d6-ab3d-c9f43113d476'
+            data-markup='none' data-page='16' style='left:1px;top:277px;width:429px;height:20px;'>2.3.1. La Tasa de
+            Interés Compensatoria Efectiva Anual fija aplicable al préstamo otorgado es</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='c7598b61-dc6b-46fa-8985-fc4cb1a52b1b'
+            data-markup='html' data-page='16' style='left:1px;top:480px;width:452px;height:724px;'><b>2.5. OTRAS
+                CONDICIONES ESPECIALES DEL PRÉSTAMO:<br><br> 2.5.1 EMISIÓN DE TÍTULOS VALORES<br><br></b> De conformidad
+            con el artículo 10 de la Ley de Títulos Valores y la circular Nº G-0090-2001, EL CLIENTE suscribe y entrega
+            a BanBif un pagaré incompleto representativo de la obligación que mantiene a su cargo como consecuencia del
+            crédito otorgado a su favor con cláusula especial de liberación de protesto, a la orden de BanBif sin
+            señalar monto a fin que, de producirse cualquiera de los supuestos señalados en la cláusula octava del
+            presente contrato, proceda BanBif con la irrevocable autorización de EL CLIENTE a completarlo con el monto
+            adeudado resultante, previa liquidación de intereses compensatorios y moratorios a las tasas aplicables
+            según el presente contrato, comisiones y gastos, consignando el vencimiento a la vista o a fecha fija a
+            criterio de BanBif sin necesidad de comunicación previa a EL CLIENTE. Este pagaré desde su vencimiento y
+            hasta su cancelación devengará los intereses originalmente establecidos o posteriormente modificados según
+            lo estipulado en la cláusula décimo cuarta de este contrato. EL CLIENTE declara recibir copia de dicho
+            pagaré y autoriza a BanBif su libre negociación.<br><br> En tal sentido, las partes dejan claramente
+            establecido que, de conformidad con lo dispuesto por el artículo 1279 del Código Civil, la emisión del
+            referido título valor no constituirá novación o sustitución de las obligaciones causales creadas. Asimismo,
+            deja establecido que la renovación del título valor, o cualquier otro cambio accesorio de la obligación que
+            se pudiese efectuar, tampoco constituirá novación del préstamo.<br><br> <b>2.5.2 PAGOS ANTICIPADOS Y
+                ADELANTO DE CUOTAS</b> El pago anticipado aplica al capital del crédito y permite reducir el monto de
+            las cuotas restantes o el plazo del crédito, mientras que el pago para adelanto de cuotas permite pagar las
+            cuotas inmediatamente posteriores a la exigible en el periodo incluyendo los intereses, comisiones y gastos
+            de dichas cuotas.<br><br> EL CLIENTE tiene derecho a efectuar pagos anticipados y adelanto de cuotas. Se
+            podrán realizar pagos anticipados de los saldos, en forma total o parcial, con la consiguiente reducción de
+            los intereses al día de pago, deduciendo asimismo las comisiones, gastos e intereses moratorios derivados de
+            las cláusulas contractuales pactadas con BanBif al día de pago, sin que le sean aplicables comisiones ni
+            gastos de algún tipo o cobros de naturaleza o efecto similar por el hecho de realizar el respectivo pago
+            anticipado o prepago. En caso el pago anticipado haya sido parcial, el cronograma de pagos original será
+            modificado.<br><br> Para realizar pagos anticipados de los saldos, en forma total o parcial, El CLIENTE
+            deberá seguir el procedimiento para el pago anticipado que se encuentra publicado en www.banbif.com.pe y en
+            los módulos informativos físicos o virtuales dispuestos en las oficinas BanBif a nivel nacional. De acuerdo
+            a dicho procedimiento, luego de efectuado el pago, si EL CLIENTE solicita el nuevo cronograma de pagos,
+            deberá regresar al sétimo día para la entrega del mismo. Si EL CLIENTE realiza un pago anticipado parcial
+            sin elegir entre disminuir el monto de las cuotas restantes o reducir el número de las mismas, BanBif
+            procederá a la reducción del número de cuotas.<br><br> <b>2.5.3 INSTRUCCIONES DE DESEMBOLSO</b><br><br> Las
+            partes convienen que con cargo al desembolso del presente crédito se proceda a<br>
+            .……………………………………………<br><br> <b>El cronograma de pagos será calculado en la fecha de la emisión del cheque de
+                gerencia o del abono en la cuenta, generándose los intereses compensatorios del préstamo a partir de
+                dicha fecha.</b></div>
+    </div>
+    <div class='jr-page' data-page='17' style='width:595px;height:842px;'>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='c7598b61-dc6b-46fa-8985-fc4cb1a52b1b'
+            data-markup='html' data-page='17' style='left:1px;top:-362px;width:452px;height:724px;'><b>2.5. OTRAS
+                CONDICIONES ESPECIALES DEL PRÉSTAMO:<br><br> 2.5.1 EMISIÓN DE TÍTULOS VALORES<br><br></b> De conformidad
+            con el artículo 10 de la Ley de Títulos Valores y la circular Nº G-0090-2001, EL CLIENTE suscribe y entrega
+            a BanBif un pagaré incompleto representativo de la obligación que mantiene a su cargo como consecuencia del
+            crédito otorgado a su favor con cláusula especial de liberación de protesto, a la orden de BanBif sin
+            señalar monto a fin que, de producirse cualquiera de los supuestos señalados en la cláusula octava del
+            presente contrato, proceda BanBif con la irrevocable autorización de EL CLIENTE a completarlo con el monto
+            adeudado resultante, previa liquidación de intereses compensatorios y moratorios a las tasas aplicables
+            según el presente contrato, comisiones y gastos, consignando el vencimiento a la vista o a fecha fija a
+            criterio de BanBif sin necesidad de comunicación previa a EL CLIENTE. Este pagaré desde su vencimiento y
+            hasta su cancelación devengará los intereses originalmente establecidos o posteriormente modificados según
+            lo estipulado en la cláusula décimo cuarta de este contrato. EL CLIENTE declara recibir copia de dicho
+            pagaré y autoriza a BanBif su libre negociación.<br><br> En tal sentido, las partes dejan claramente
+            establecido que, de conformidad con lo dispuesto por el artículo 1279 del Código Civil, la emisión del
+            referido título valor no constituirá novación o sustitución de las obligaciones causales creadas. Asimismo,
+            deja establecido que la renovación del título valor, o cualquier otro cambio accesorio de la obligación que
+            se pudiese efectuar, tampoco constituirá novación del préstamo.<br><br> <b>2.5.2 PAGOS ANTICIPADOS Y
+                ADELANTO DE CUOTAS</b> El pago anticipado aplica al capital del crédito y permite reducir el monto de
+            las cuotas restantes o el plazo del crédito, mientras que el pago para adelanto de cuotas permite pagar las
+            cuotas inmediatamente posteriores a la exigible en el periodo incluyendo los intereses, comisiones y gastos
+            de dichas cuotas.<br><br> EL CLIENTE tiene derecho a efectuar pagos anticipados y adelanto de cuotas. Se
+            podrán realizar pagos anticipados de los saldos, en forma total o parcial, con la consiguiente reducción de
+            los intereses al día de pago, deduciendo asimismo las comisiones, gastos e intereses moratorios derivados de
+            las cláusulas contractuales pactadas con BanBif al día de pago, sin que le sean aplicables comisiones ni
+            gastos de algún tipo o cobros de naturaleza o efecto similar por el hecho de realizar el respectivo pago
+            anticipado o prepago. En caso el pago anticipado haya sido parcial, el cronograma de pagos original será
+            modificado.<br><br> Para realizar pagos anticipados de los saldos, en forma total o parcial, El CLIENTE
+            deberá seguir el procedimiento para el pago anticipado que se encuentra publicado en www.banbif.com.pe y en
+            los módulos informativos físicos o virtuales dispuestos en las oficinas BanBif a nivel nacional. De acuerdo
+            a dicho procedimiento, luego de efectuado el pago, si EL CLIENTE solicita el nuevo cronograma de pagos,
+            deberá regresar al sétimo día para la entrega del mismo. Si EL CLIENTE realiza un pago anticipado parcial
+            sin elegir entre disminuir el monto de las cuotas restantes o reducir el número de las mismas, BanBif
+            procederá a la reducción del número de cuotas.<br><br> <b>2.5.3 INSTRUCCIONES DE DESEMBOLSO</b><br><br> Las
+            partes convienen que con cargo al desembolso del presente crédito se proceda a<br>
+            .……………………………………………<br><br> <b>El cronograma de pagos será calculado en la fecha de la emisión del cheque de
+                gerencia o del abono en la cuenta, generándose los intereses compensatorios del préstamo a partir de
+                dicha fecha.</b></div>
+        <div class='jr-el ' data-type='textField' data-key='' data-uuid='c67a245d-52b0-4aa9-993e-3165819e8243'
+            data-markup='html' data-page='17' style='left:0px;top:362px;width:454px;height:445px;'><b>III.- REFERENCIAS
+                SOBRE EL BIEN Y LA HIPOTECA QUE SE CONSTITUYE:</b><br><br> 3.1. Ubicación de los Inmuebles:<br><br>
+            <u>\" {p_bfDCNombres} \"</u>, Distrito de <u>\" {p_bfDCNombres} \"</u>, Provincia y Departamento de <u>\"
+                {p_bfDCNombres} \"</u>, inscrito en <u>\" {p_bfDCNombres} \"</u>. Estacionamiento N° <u>\"
+                {p_bfDCNombres} \"</u> del sótano del edificio construido sobre <u>\" {p_bfDCNombres} \"</u>, Distrito
+            de <u>\" {p_bfDCNombres} \"</u>, Provincia y Departamento de <u>\" {p_bfDCNombres} \"</u>, inscrito en <u>\"
+                {p_bfDCNombres} \"</u>.<br><br><br> 3.2. El dominio de EL CLIENTE sobre los bienes materia de hipoteca,
+            consta en la minuta de compraventa de fecha \" {p_bfDCNombres} \" de \" {p_bfDCNombres} \" de \"
+            {p_bfDCNombres} \".<br><br> Las partes declaran que los inmuebles otorgados en garantía a BanBif son
+            financiados por BanBif de acuerdo a las especificaciones y características señaladas en la minuta de
+            compraventa de fecha\" {p_bfDCNombres} \" de \" {p_bfDCNombres} \" de \" {p_bfDCNombres} \", sirviendo a las
+            necesidades propias de EL CLIENTE y no a las de BanBif.<br><br> Cualquier discrepancia que pudiera surgir
+            con relación a las características y calidad técnica de los inmuebles, de las áreas comunes y del
+            equipamiento, eventuales vicios o deficiencias, forma, plazo u oportunidad de entrega, así como cualquier
+            exigencia, conflicto o discrepancia relacionados con la celebración y/o ejecución del contrato de
+            compraventa, con los términos y condiciones ahí pactados o con la entrega de los inmuebles, serán resueltos
+            total y exclusivamente entre EL CLIENTE y el vendedor, quienes se deben el cumplimiento de las prestaciones
+            pactadas en el contrato de compraventa, quedando en claro que cualquier responsabilidad de BanBif se
+            circunscribe tan sólo a lo pactado en la presente cláusula adicional de PRESTAMO HIPOTECARIO.<br><br> EL
+            CLIENTE expresa su pleno consentimiento y conformidad con los términos y condiciones para la entrega los
+            inmuebles, así como con la descripción de los mismos.<br><br><br> 3.3. Monto de la Hipoteca:
+        </div>
+        <div class='jr-el ' data-type='textField' data-key='' data-uuid='5318a4d7-ce65-4c78-b750-ea5c170a82e6'
+            data-markup='html' data-page='17' style='left:0px;top:807px;width:450px;height:160px;'>El gravamen
+            hipotecario que se constituye es hasta por la suma de S/\" {p_bfDCNombres} \".00 (\" {p_bfDCNombres} \" y
+            00/100 Soles).<br><br><br> 3.4. Las partes convienen en adoptar como valorización comercial actualizada del
+            bien gravado, la suma de S/\" {p_bfDCNombres} \".00 (\" {p_bfDCNombres} \" y 00/100 Soles), tomando como
+            referencia la tasación efectuada por el ingeniero\" {p_bfDCNombres} \" de fecha\" {p_bfDCNombres} \" de \"
+            {p_bfDCNombres} \" de \" {p_bfDCNombres} \", la misma que también contiene las especificaciones técnicas de
+            los bienes gravados, cuya conformidad ratifican las partes. Las dos terceras partes de esta valorización
+            servirán de base para el primer remate en caso de ejecución.</div>
+    </div>
+    <div class='jr-page' data-page='18' style='width:595px;height:842px;'>
+        <div class='jr-el ' data-type='textField' data-key='' data-uuid='5318a4d7-ce65-4c78-b750-ea5c170a82e6'
+            data-markup='html' data-page='18' style='left:0px;top:-35px;width:450px;height:160px;'>El gravamen
+            hipotecario que se constituye es hasta por la suma de S/\" {p_bfDCNombres} \".00 (\" {p_bfDCNombres} \" y
+            00/100 Soles).<br><br><br> 3.4. Las partes convienen en adoptar como valorización comercial actualizada del
+            bien gravado, la suma de S/\" {p_bfDCNombres} \".00 (\" {p_bfDCNombres} \" y 00/100 Soles), tomando como
+            referencia la tasación efectuada por el ingeniero\" {p_bfDCNombres} \" de fecha\" {p_bfDCNombres} \" de \"
+            {p_bfDCNombres} \" de \" {p_bfDCNombres} \", la misma que también contiene las especificaciones técnicas de
+            los bienes gravados, cuya conformidad ratifican las partes. Las dos terceras partes de esta valorización
+            servirán de base para el primer remate en caso de ejecución.</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='25a0d949-676b-4435-a37a-1a105d66f915'
+            data-markup='none' data-page='18' style='left:100px;top:162px;width:9px;height:20px;'>,</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='90527c1e-dc15-49b1-8cc3-370dfc1bb789'
+            data-markup='none' data-page='18' style='left:147px;top:161px;width:14px;height:18px;'>de</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='859bdff5-f96c-479c-8649-54279483949d'
+            data-markup='none' data-page='18' style='left:206px;top:161px;width:14px;height:18px;'>de</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='ae51bc53-addc-4923-a3af-cea63f6722a2'
+            data-markup='html' data-page='18' style='left:65px;top:372px;width:100px;height:20px;'>
+            .......................................</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='90c26975-46da-495e-94aa-0185be0d795d'
+            data-markup='none' data-page='18' style='left:65px;top:388px;width:100px;height:20px;'>(Firma) EL CLIENTE
+        </div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='3d3b845b-bafe-4f65-b035-04375ec67530'
+            data-markup='none' data-page='18' style='left:294px;top:388px;width:100px;height:20px;'>LA CONYUGE</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='ecaf9675-7434-4c71-95f2-033e97450b31'
+            data-markup='none' data-page='18' style='left:202px;top:486px;width:42px;height:20px;'>BANBIF</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='411e2ffd-6421-48aa-ae92-f83b6a980e86'
+            data-markup='html' data-page='18' style='left:185px;top:471px;width:92px;height:20px;'>
+            .............................</div>
+        <div class='jr-el ' data-type='staticText' data-key='' data-uuid='1edce3e6-7326-4a39-b1cf-ec6af4506f9f'
+            data-markup='html' data-page='18' style='left:294px;top:372px;width:100px;height:20px;'>
+            .......................................</div>
+    </div>
+    <div class='jr-page' data-page='19' style='width:595px;height:842px;'></div>
+    <div class='jr-page' data-page='20' style='width:595px;height:842px;'></div>
+    <div class='jr-page' data-page='21' style='width:595px;height:842px;'></div>
+    <div class='jr-page' data-page='22' style='width:595px;height:842px;'></div>
 </body>
 
 </html>

@@ -1,30 +1,25 @@
 /**
  * Convierte una cadena HTML (report/Jasper) en un template compatible con pdfme.
- * - Usa DOMParser para parsear el HTML.
- * - Extrae width/height de .jr-page para basePdf.
- * - Mapea cada .jr-el a un schema de pdfme (asume text para data-type='textField').
- * - Incluye data-uuid en la propiedad dataUuid del schema.
+ * - Soporta HTML del backend v2 con múltiples .jr-page pre-paginadas.
+ * - Cada .jr-page del HTML se convierte en una página del template pdfme.
  *
  * Retorna: { basePdf: { width, height, padding }, schemas: [ [page1Elems...], [page2Elems...] ] }
  */
 export function htmlToPdfmeTemplate(htmlString, options = {}) {
-  // Opciones: dpi (para convertir px a mm), targetUnit ("mm" o "px")
   const { dpi = 72, targetUnit = 'mm' } = options;
 
-  // Helper: extrae primer número (float/int) de una cadena tipo '123px' -> 123
+  // Helper: extrae número de una cadena tipo '123px' -> 123
   const pxToNum = (v) => {
     if (v == null) return 0;
     const m = String(v).match(/-?\d+(?:\.\d+)?/);
     return m ? parseFloat(m[0]) : 0;
   };
 
-  // Convierte px a mm usando dpi: 1in = 25.4mm, 1in = dpi px => 1px = 25.4/dpi mm
+  // Convierte px a mm
   const pxToMm = (px) => (px * 25.4) / dpi;
-
-  // Si targetUnit es 'px' devolvemos valores en px (factor = 1), si 'mm' usamos pxToMm
   const scaleFn = targetUnit === 'px' ? (v) => v : (v) => pxToMm(v);
 
-  // Helper: parsea un string style CSS en objeto { left: '10px', top: '5px', ... }
+  // Parsea string style CSS en objeto
   const parseStyle = (styleString) => {
     const obj = {};
     if (!styleString) return obj;
@@ -36,82 +31,54 @@ export function htmlToPdfmeTemplate(htmlString, options = {}) {
     return obj;
   };
 
-  // Limpia secuencias escapadas comunes que vienen en las expresiones Jasper
-  // Ej: \" -> ", \\ -> \, \n -> nueva línea (si corresponde)
-  const unescapeJasperString = (s) => {
-    if (!s) return s;
-    // Primero, reemplazar saltos de línea por un espacio para preservar separación entre tokens
-    let res = String(s).replace(/\r?\n/g, ' ');
-    // Reemplazar sequences comunes: \" -> ", \\\\ -> \\, \\' -> '
-    res = res.replace(/\\\\/g, '\\\\TEMP_BACKSLASH');
-    res = res.replace(/\\\"/g, '"');
-    res = res.replace(/\\\'/g, "'");
-    // restaurar backslashes simples
-    res = res.replace(/\\TEMP_BACKSLASH/g, '\\');
-    // también limpiar comillas innecesarias envolventes: "..." -> ...
-    if (res.startsWith('"') && res.endsWith('"')) {
-      res = res.slice(1, -1);
-    }
-    return res;
+  // Limpia texto de secuencias escapadas (para compatibilidad con v1)
+  const cleanText = (s) => {
+    if (!s) return '';
+    let result = String(s);
+    // Normalizar espacios y quitar escapes residuales
+    result = result.replace(/\r?\n/g, ' ');
+    result = result.replace(/\s+/g, ' ').trim();
+    return result;
   };
 
-  // Normaliza espacios: colapsa múltiples espacios en uno y trim
-  const normalizeWhitespace = (s) => {
-    return String(s).replace(/\s+/g, ' ').trim();
-  };
-
-  // Convierte patrones concatenados de Jasper del tipo "text " + $P{param} + " more"
-  // a una representación legible con placeholders: text {param} more
-  const convertJasperConcatenationToPlaceholders = (s) => {
-    if (!s) return s;
-    let out = s;
-    // Reemplazar $P{param} por {param}
-    out = out.replace(/\$P\{([^}]+)\}/g, '{$1}');
-    // Reemplazar concatenadores comunes: " + " o + " etc. por espacios (ya limpiados antes)
-    // También quitar secuencias de + que queden
-    out = out.replace(/"\s*\+\s*"/g, '');
-    out = out.replace(/\+\s*/g, ' ');
-    return normalizeWhitespace(out);
-  };
-
-  // parse HTML
+  // Parse HTML
   const parser = new DOMParser();
   const doc = parser.parseFromString(htmlString, 'text/html');
 
-  // buscar páginas
+  // Buscar todas las páginas .jr-page
   const pageNodes = Array.from(doc.querySelectorAll('.jr-page'));
-  const pages = pageNodes.length ? pageNodes : [doc.body];
+  
+  // Si no hay páginas, usar body como fallback
+  const pages = pageNodes.length > 0 ? pageNodes : [doc.body];
 
-  const schemas = pages.map((page) => {
-    const pageStyle = parseStyle(page.getAttribute('style') || '');
-    const pageWidth = pxToNum(pageStyle.width || pageStyle['min-width'] || 0);
-    const pageHeight = pxToNum(pageStyle.height || pageStyle['min-height'] || 0);
+  // Obtener dimensiones de la primera página
+  const firstPageStyle = parseStyle(pages[0]?.getAttribute('style') || '');
+  const pageWidthPx = pxToNum(firstPageStyle.width || 595);
+  const pageHeightPx = pxToNum(firstPageStyle.height || 842);
 
+  // Procesar cada página
+  const schemas = pages.map((page, pageIdx) => {
     const elNodes = Array.from(page.querySelectorAll('.jr-el'));
-    const pageSchemas = elNodes.map((el, idx) => {
+    
+    return elNodes.map((el, idx) => {
       const dataType = (el.getAttribute('data-type') || '').trim();
-      const type = dataType === 'textField' || dataType === 'text' ? 'text' : 'text';
-
       const styleObj = parseStyle(el.getAttribute('style') || '');
-      const left = pxToNum(styleObj.left || styleObj.x || 0);
-      const top = pxToNum(styleObj.top || styleObj.y || 0);
+      
+      const left = pxToNum(styleObj.left || 0);
+      const top = pxToNum(styleObj.top || 0);
       const width = pxToNum(styleObj.width || 0);
       const height = pxToNum(styleObj.height || 0);
 
       const dataUuid = el.getAttribute('data-uuid') || null;
       const dataKey = el.getAttribute('data-key') || null;
+      const rawText = cleanText(el.innerText || '');
 
-    let rawText = unescapeJasperString((el.innerText || '') || '');
-    rawText = convertJasperConcatenationToPlaceholders(rawText);
+      const name = dataKey || dataUuid || `field_p${pageIdx + 1}_${idx + 1}`;
 
-      const name = dataKey || dataUuid || `field_${idx + 1}`;
-
-      // detectar placeholders del tipo {param}
+      // Detectar placeholders {param}
       const placeholderMatches = Array.from(rawText.matchAll(/\{([^}]+)\}/g)).map(m => m[1]);
-
-      // si hay placeholders, convertir el tipo a multiVariableText y generar variables
       const isMulti = placeholderMatches.length > 0;
-      const finalType = isMulti ? 'multiVariableText' : type;
+      const finalType = isMulti ? 'multiVariableText' : 'text';
 
       const converted = {
         name,
@@ -124,8 +91,8 @@ export function htmlToPdfmeTemplate(htmlString, options = {}) {
         rotate: 0,
         alignment: 'left',
         verticalAlignment: 'top',
-        fontSize: 12,
-        lineHeight: 1,
+        fontSize: 10,
+        lineHeight: 1.2,
         characterSpacing: 0,
         fontColor: '#000000',
         fontName: 'Roboto',
@@ -139,40 +106,24 @@ export function htmlToPdfmeTemplate(htmlString, options = {}) {
       };
 
       if (isMulti) {
-        // construir content mapping simple: {v1: 'VAR_NAME', ...} pero usaremos los nombres tal cual
-        const variables = placeholderMatches;
-        // content se espera a veces como JSON string por compatibilidad en templates previos
         try {
-          converted.content = JSON.stringify(variables.reduce((acc, v, i) => {
-            // generar claves v1, v2... conservando el nombre original en values
+          converted.content = JSON.stringify(placeholderMatches.reduce((acc, v) => {
             acc[v] = v;
             return acc;
           }, {}));
+          converted.variables = placeholderMatches;
         } catch (e) {
           converted.content = rawText;
         }
-        converted.variables = variables;
       }
-
-      // agregar metadatos originales en px para posible reconversión
-      converted.meta = {
-        originalPx: { x: left, y: top, width, height },
-      };
 
       return converted;
     });
-
-    // attach metadata so we can pick basePdf from first page
-    pageSchemas._pageMeta = { width: pageWidth, height: pageHeight };
-    return pageSchemas;
   });
 
-  const firstPageMeta = (schemas[0] && schemas[0]._pageMeta) || { width: 0, height: 0 };
-  schemas.forEach((p) => { if (p._pageMeta) delete p._pageMeta; });
-
-  // construir basePdf con unidades convertidas y meta con info de escala
-  const baseWidth = targetUnit === 'px' ? firstPageMeta.width : pxToMm(firstPageMeta.width || 595);
-  const baseHeight = targetUnit === 'px' ? firstPageMeta.height : pxToMm(firstPageMeta.height || 842);
+  // Construir basePdf
+  const baseWidth = targetUnit === 'px' ? pageWidthPx : pxToMm(pageWidthPx);
+  const baseHeight = targetUnit === 'px' ? pageHeightPx : pxToMm(pageHeightPx);
 
   const template = {
     basePdf: {
@@ -180,14 +131,16 @@ export function htmlToPdfmeTemplate(htmlString, options = {}) {
       height: baseHeight,
       padding: [0, 0, 0, 0],
       meta: {
-        originalPx: { width: firstPageMeta.width, height: firstPageMeta.height },
+        originalPx: { width: pageWidthPx, height: pageHeightPx },
+        numPages: schemas.length,
         dpi,
         unit: targetUnit,
-        scaleFn: targetUnit === 'px' ? '1' : `px->mm (dpi=${dpi})`,
       },
     },
     schemas,
   };
+
+  console.log(`📄 Template convertido: ${schemas.length} página(s), ${schemas.reduce((sum, p) => sum + p.length, 0)} elementos`);
 
   return template;
 }
